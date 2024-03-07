@@ -1,1 +1,28 @@
 \section{The gauge equation}
+Let \begin{tikzcd}
+    E \ar[r,"\pi"] & M 
+\end{tikzcd} be a vector bundle. An affine connection $\nabla$ is a $\R$-linear mapping:
+\begin{equation}
+    \label{eq:affine_connection}
+   \nabla \colon \Gamma(E) \to \Gamma\left( T^\star M \otimes E \right)
+\end{equation}
+such that for any $f \in C^\infty(M)$, any $s \in \Gamma(E)$ and any tangent vector $X$, $\nabla_X fs = X(f) s + f \nabla_X s.$
+Let \begin{tikzcd}
+    E^\star \ar[r,"\pi^\star"] & M
+\end{tikzcd}
+be the bundle obtained by dualizing fiberwise $E.$ A section $\theta \in \Gamma \left( E^* \otimes E \right)$ defines two bundle morphisms:
+ \begin{equation}
+    \begin{tikzcd}
+        E \ar[r,"\theta"] \ar[rd,"\pi"] & E \ar[d,"\pi"]\\
+        & M
+    \end{tikzcd} \hspace{40pt}\begin{tikzcd}
+        E^\star \ar[r,"\theta^\star"] \ar[rd,"\pi^\star"] & E^\star \ar[d,"\pi^\star"]\\
+        & M
+    \end{tikzcd}
+ \end{equation}
+ where $\theta^\star$ is such that for any $p \in M$, $X \in T_p M, \xi \in T_p^\star M$:
+ \begin{equation}
+    \label{eq:transpose_theta}
+    \left(\theta_p^\star \xi  \right)\left( X \right) = \xi \left( \theta_p X \right)
+ \end{equation} 
+ 
