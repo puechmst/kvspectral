@@ -1,12 +1,12 @@
 \section{The gauge equation}
 Let \begin{tikzcd}
     E \ar[r,"\pi"] & M 
-\end{tikzcd} be a vector bundle. An affine connection $\nabla$ is a $\R$-linear mapping:
+\end{tikzcd} be a vector bundle. An affine connection $\nabla$ is a $\R$-linear mapping \citep{husemöller2013fibre}:
 \begin{equation}
     \label{eq:affine_connection}
    \nabla \colon \Gamma(E) \to \Gamma\left( T^\star M \otimes E \right)
 \end{equation}
-such that for any $f \in C^\infty(M)$, any $s \in \Gamma(E)$ and any tangent vector $X$, $\nabla_X fs = X(f) s + f \nabla_X s.$
+such that for any $f \in C^\infty(M)$, $\nabla_X fs = df \otimes s + f \nabla_X s.$
 Let \begin{tikzcd}
     E^\star \ar[r,"\pi^\star"] & M
 \end{tikzcd}
@@ -27,6 +27,63 @@ be the bundle obtained by dualizing $E$ fiberwise.  A section $\theta \in \Gamma
  \end{equation} 
  \begin{defn}
     \label{def:gauge_equation}
-    Let $\left( \nabla_1, \nabla_2 \right)$ be a couple of affine connections. A $(1,1)$-tensor $\theta$ is said to be a solution  
-of the gauge equation.
+    Let $\left( \nabla_1, \nabla_2 \right)$ be a couple of affine connections. A $(1,1)$-tensor $\theta$ is said to be a solution of the gauge equation if for any $s \in \Gamma(E)$:
+    \begin{equation}
+        \label{eq:gauge_equation}
+        \nabla_1 \theta s = \theta \nabla_2 s
+    \end{equation}
+    or equivalently if the next diagram commutes:
+    \begin{equation}
+        \label{eq_gauge_diagram}
+         \begin{tikzcd}
+     \Gamma\left( E \right) \ar[r, "\nabla_2"] \ar[d,"\theta"] & \Gamma\left( T^\star M \otimes E\right) \ar[d,"Id \otimes \theta"] \\
+      \Gamma\left(E \right) \ar[r,"\nabla_1"] & \Gamma\left( T^\star M \otimes E\right)
+     \end{tikzcd}
+    \end{equation}
  \end{defn}
+ 
+ Definition \ref{def:gauge_equation} can be made local, giving rise
+ to diagrams:
+ \begin{equation}
+     \label{eq:eq_local_gauge_diagram}
+     \begin{tikzcd}
+     \Gamma\left(U; E \right) \ar[r, "\nabla_2"] \ar[d,"\theta_U"] & \Gamma\left( U; T^\star M \otimes E\right) \ar[d,"Id \otimes \theta_U"] \\
+      \Gamma\left(U; E \right) \ar[r,"\nabla_1"] & \Gamma\left( U; T^\star M \otimes E\right)
+     \end{tikzcd}
+ \end{equation}
+ with $U$ an open subset of $M$ and $\theta_U \in \Gamma \left(
+ U; E^\star \otimes E 
+ \right).$
+ \begin{defn}
+ \label{def:dual_connection}
+ Let be $\nabla$ be an affine connection. Its dual is the affine connection:
+ \begin{equation}
+     \label{eq:dual_connection}
+     \nabla^\star \colon  \Gamma(E^\star) \to \Gamma\left( T^\star M \otimes E^\star \right)
+ \end{equation}
+ defined by the relation:
+ \begin{equation}
+     \label{eq:nabla_duality_relation}
+     \left( \nabla^\star \xi \right)\left(s\right) = 
+     \xi(s) - \xi\left(\nabla s\right)
+ \end{equation}
+ \end{defn}
+ \begin{prop}
+ \label{prop:dual_gauge}
+ If $\theta$ is a solution of the gauge equation with connections $\left(\nabla_1, \nabla_2\right)$, then 
+ $\theta^\star$ is a solution of the gauge equation with connections $\left(\nabla_2^\star, \nabla_1^\star\right)$
+ \end{prop}
+ \begin{proof}
+ For $s \in \Gamma(E), \, \xi \in \Gamma(E^\star)$:
+ \begin{align}
+     \left(\nabla_2^\star (\theta^\star \xi)\right)\left(
+     s\right) & = \left(\theta^\star \xi\right)(s) - 
+     \left(\theta^\star \xi\right)\nabla_2 s 
+     = \xi \left( \theta s \right) - \xi \left( \theta \nabla_2 s \right) \\
+     & = \xi \left( \theta s \right) - \xi \left( \nabla_1 
+     \theta s \right) 
+      = \left(\theta^\star \nabla_1^\star \xi \right)(s)
+ \end{align}
+ \end{proof}
+ Given a couple of connections $\left(\nabla_1 \nabla_2\right)$, the difference $D_{1,2} = \nabla_1 - \nabla_2$ is a 
+ 

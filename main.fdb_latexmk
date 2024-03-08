@@ -6,7 +6,7 @@
   (generated)
   "main.bbl"
   "main.blg"
-["pdflatex"] 1709879231 "c:/Users/puech/OneDrive - enac.fr/PUBLICATIONS/kvspectral/main.tex" "main.pdf" "main" 1709879231
+["pdflatex"] 1709912037 "c:/Users/puech/OneDrive - enac.fr/PUBLICATIONS/kvspectral/main.tex" "main.pdf" "main" 1709912037
   "Definitions/journalnames.tex" 1709799830 83528 beb7d248dee10af84a97fef0369bcb10 ""
   "Definitions/logo-mdpi.eps" 1709799831 566370 aca2704abcbbb515f606d3b88231916d ""
   "Definitions/logo-orcid.pdf" 1709799832 12671 39a20ba789123aa897c7efc569fb5270 ""
@@ -271,11 +271,11 @@
   "c:/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1650964319 2826440 5ac0ea7ffed4bc83f6d023419731ecaf ""
   "c:/texlive/2022/texmf.cnf" 1650964179 713 e69b156964470283e0530f5060668171 ""
   "conclusion.tex" 0 -1 0 ""
-  "gauge.tex" 1709879211 1390 424254d5151cc20f4c4708ccfb43f4ce ""
+  "gauge.tex" 1709912030 3799 73962ae9e0eaedc079a4ec0159a41cb0 ""
   "intro.tex" 1709802153 651 84bf09706979c9e4429ed1889b52c362 ""
   "kv.tex" 1709799830 24 6bfd613455cedb67239a7167084d369c ""
-  "main.aux" 1709879231 34 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "main.bbl" 1709879218 52 af4b0b98f05793001894ef4f66286eb5 "bibtex main"
+  "main.aux" 1709912037 34 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "main.bbl" 1709912032 52 af4b0b98f05793001894ef4f66286eb5 "bibtex main"
   "main.out" 0 -1 0 "pdflatex"
   "main.tex" 1709799829 20560 113a770531b67b3f628b7c5238c38e77 ""
   "spectral.tex" 1709799830 29 96bd244a0597813030af1186f5d54a22 ""
