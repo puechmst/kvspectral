@@ -10,19 +10,23 @@ such that for any $f \in C^\infty(M)$, any $s \in \Gamma(E)$ and any tangent vec
 Let \begin{tikzcd}
     E^\star \ar[r,"\pi^\star"] & M
 \end{tikzcd}
-be the bundle obtained by dualizing fiberwise $E.$ A section $\theta \in \Gamma \left( E^* \otimes E \right)$ defines two bundle morphisms:
+be the bundle obtained by dualizing $E$ fiberwise.  A section $\theta \in \Gamma \left( E^* \otimes E \right)$, that is a $(1,1)$-tensor, defines two bundle morphisms:
  \begin{equation}
     \begin{tikzcd}
         E \ar[r,"\theta"] \ar[rd,"\pi"] & E \ar[d,"\pi"]\\
         & M
     \end{tikzcd} \hspace{40pt}\begin{tikzcd}
-        E^\star \ar[r,"\theta^\star"] \ar[rd,"\pi^\star"] & E^\star \ar[d,"\pi^\star"]\\
+        E^\star \ar[r,"\theta^t"] \ar[rd,"\pi^\star"] & E^\star \ar[d,"\pi^\star"]\\
         & M
     \end{tikzcd}
  \end{equation}
- where $\theta^\star$ is such that for any $p \in M$, $X \in T_p M, \xi \in T_p^\star M$:
+ where $\theta^t$ is such that for any $p \in M$, $X \in T_p M, \xi \in T_p^\star M$:
  \begin{equation}
     \label{eq:transpose_theta}
-    \left(\theta_p^\star \xi  \right)\left( X \right) = \xi \left( \theta_p X \right)
+    \left(\theta_p^t \xi  \right)\left( X \right) = \xi \left( \theta_p X \right)
  \end{equation} 
- 
+ \begin{defn}
+    \label{def:gauge_equation}
+    Let $\left( \nabla_1, \nabla_2 \right)$ be a couple of affine connections. A $(1,1)$-tensor $\theta$ is said to be a solution  
+of the gauge equation.
+ \end{defn}

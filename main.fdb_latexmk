@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex main"] 1709820024 "main.aux" "main.bbl" "main" 1709820024
+["bibtex main"] 0 "main.aux" "main.bbl" "main" 0
   "./Definitions/mdpi.bst" 1709799830 23653 62187687754729c82001f3236396925e ""
-  "main.aux" 1709820024 34 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "main.aux" 0 -1 0 "pdflatex"
   "main.bib" 1709820018 260 486efab30ca04bf65a94899fb34a4521 ""
   (generated)
   "main.bbl"
   "main.blg"
-["pdflatex"] 1709820019 "c:/Users/puech/OneDrive - enac.fr/PUBLICATIONS/kvspectral/main.tex" "main.pdf" "main" 1709820019
+["pdflatex"] 1709830450 "c:/Users/puech/OneDrive - enac.fr/PUBLICATIONS/kvspectral/main.tex" "main.pdf" "main" 1709830450
   "Definitions/journalnames.tex" 1709799830 83528 beb7d248dee10af84a97fef0369bcb10 ""
   "Definitions/logo-mdpi.eps" 1709799831 566370 aca2704abcbbb515f606d3b88231916d ""
   "Definitions/logo-orcid.pdf" 1709799832 12671 39a20ba789123aa897c7efc569fb5270 ""
@@ -271,12 +271,12 @@
   "c:/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1650964319 2826440 5ac0ea7ffed4bc83f6d023419731ecaf ""
   "c:/texlive/2022/texmf.cnf" 1650964179 713 e69b156964470283e0530f5060668171 ""
   "conclusion.tex" 0 -1 0 ""
-  "gauge.tex" 1709820017 1164 21a9e0f42d9b55c2c318f35f8a02977e ""
+  "gauge.tex" 1709830439 1362 9af4f749ac17476d16686cef3d1dd225 ""
   "intro.tex" 1709802153 651 84bf09706979c9e4429ed1889b52c362 ""
   "kv.tex" 1709799830 24 6bfd613455cedb67239a7167084d369c ""
-  "main.aux" 1709819879 1976 a731002ff4e31b851a0f76dd8c8f20f3 "pdflatex"
-  "main.bbl" 1709820019 52 af4b0b98f05793001894ef4f66286eb5 "bibtex main"
-  "main.out" 1709819879 1046 3cf8d32f8ffe6595744ff7a6eefdddf8 "pdflatex"
+  "main.aux" 1709830450 34 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "main.bbl" 1709830445 52 af4b0b98f05793001894ef4f66286eb5 "bibtex main"
+  "main.out" 0 -1 0 "pdflatex"
   "main.tex" 1709799829 20560 113a770531b67b3f628b7c5238c38e77 ""
   "spectral.tex" 1709799830 29 96bd244a0597813030af1186f5d54a22 ""
   "statistical.tex" 1709799830 46 ac089d0a15dd149b1c9a67267f52f3a0 ""
