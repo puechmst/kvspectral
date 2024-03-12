@@ -1,1 +1,230 @@
 \section{KV cohomology}
+The cochain complex of Koszul-Vinbeg algebras may be introduced by the following three ways:\cite{Foliations-webs-Hessian Geometry-Information Geometry-Entropy and Homology.}\\
+Way1: From the point of view of the tensorial calculus: The brut formula,\\
+Way2: From the pointof view of the theory of categories: Simplicial objects.\\
+Way3: The point of view of the Anomalies, viz the calculation  rules.\\
+In this work, we take into account forthcoming our applications interests in relationships between the information Geometry and the Differential topology.\\
+\subsection{Koszul-Vinberg algebras.}
+We go to recall useful basic definitions.
+\begin{defn} A real Koszul-Vinberg algebra is a real vector space A endowed with a product 
+$$A \times A \ni (a,b)\rightarrow ab \in A$$
+subject the following identity,
+$$(a,b,c) = (b,a,c)$$ 
+where
+$$(a,b,c) = (ab)c - a(bc).$$
+\end{defn}
+Examples. \\
+(a) Associative algebras are Koszul-Vinberg algebras.\\
+(b) The vector of vector fields on a smooth manifold M endowed with symmetric flat Koszul connection $\nabla$.\\
+\subsection{KV modules of Koszul-Vinberg algebras}
+\begin{defn} A real left module of a real Koszul-Vingerg algebra $A$ is a real vector space $V$ endowed with a bilinear mapping
+$$A \times V \ni (a,v) \rightarrow a.v \in V$$
+which satisfies the following identity,
+$$(a,a',v) = (a',a,v),$$
+where
+$$(a, a',v) = (aa').v = a.(a'.v).$$
+\end{defn}
+In this paper we will be dealing with Koszul-Vinberg algebra of vector fields $\mathcal{X}(M)$ on a differentiable manifold $M$ endowed with a Koszul connection $\nabla$ whose both the Curvature tensor $R^\nabla$ and the torsion tensor $T^\nabla$ vanish identically.\\
+We put 
+$$A : = (\mathcal{X}(M), \nabla).$$
+The product on $A$ is defined as it follows,
+$$a.a' =\nabla_aa'.$$
+Of course $\mathcal{X}(M)$ is a left Koszul-Vinberg module of $A$\\
+The space of smooth functions $C^\infty(M)$ is a left Koszul-Vinberg module of $A$ under the left action
+$$A \times C^\infty(M) \ni (a,f) \rightarrow df(a) \in C^\infty(M)$$
+\subsection{Vectorial cochain complexes }
+Given a Koszul-Vinberg algebra A, to any left module module V are associated the following two cochain complexes of A with coefficinets in V. One is denoted by $(C_{KV}(A,V)$ and is named KV complex. The other is denoted $C_\tau(A,V)$ and is named total KV complex. We go to remind the definition and point some framework of their efficiency.\\
+\subsubsection{The complex $C_{KV}(A,V)$}
+We set 
+$$J(V) =\left\{v \in V\quad s.t.\quad (a,a',v) = 0 \quad 
+\forall (a,a')\subset A\right\}.$$
+Given 
+$$\xi = a_1\otimes..\otimes a_{q+1} \in A^{\otimes q+1}$$
+we put
+$$\partial_i\xi = ..\otimes \hat{a}_i \otimes..$$
+and 
+$$a.\xi = \Sigma_i ..\otimes a.a_i\otimes..$$
+
+The vector space $C_{KV}(A,V)$ is $\mathbb{Z}$-graded by the homogeneous subspaces $C^q_{KV}$ which are defined as it follows:\\
+
+$C^q_{KV} = 0 \quad if \quad q < 0, $
+$C^0_{KV} = J(V)$,\\
+$C^q_{KV} = Hom(A^{\otimes q},V),\quad q > 0.$\\
+The operator 
+$$C^q_{KV}\ni f \rightarrow \delta.f C^{q+1}_{KV}$$
+is defined as it follows,
+$$\delta.v(a) = a.v \quad (a,v) \in A \times J(V),$$
+Let $$f \in C^q_{KV}$$
+and 
+$$\xi = a_1\otimes.. \otimes a_{q+1}$$
+then
+$$\delta.f (\xi) = \Sigma^q_1 (-1)^{i-1}[a_i.f(\partial_i\xi) - f(X_i.\partial_i\xi)].$$
+The q-th cohomology space is denoted by
+$$H^q_{KV}(A,V) = \frac{ker(\delta: C^q_{KV}\rightarrow C^{q+1}_{KV})}{\delta (C^{q-1}_{KV})}.$$
+This cohomology is the solution of the conjecture of Gerstenhaber for the deformations of Hyperbolic structure in the sense of Koszul. The conjecture of Gerstenhaber claim that \textit{Every restrict theory of deformation generates it prper theorey of cohomology}, \cite{Gerstenbaher}.\\
+This cohomology also manages equivalence extensions of Koszul-Vinberg by Koszul-Vinberg modules. More explictly let $Ext(A,V)$ the set of equivalent classes of extensions of A by V, then one can write 
+$$Ext(A,V) = H^2_{KV}(A,V).$$
+\subsubsection{Total KV complex $C_\tau(A,V)$.}
+The cochain complex $C_\tau(A,V)$ is $\mathbb{Z}$-graded by the homogeneous subspaces $C^q_\tau(A,V)$ which as it follows,\\
+$C^q_\tau = 0$  if $q < 0$, \\
+$C^0_\tau = V$, \\
+$C^q_\tau = Hom(A^{\otimes q},V)\quad if q > 0.$\\
+We use the notation in the subsubsection above. The operation $\delta_\tau$ is defined as it follows:\\
+$\delta_\tau v (a) = a.v$ if  $v\in C^0,$\\
+If $f \in C^q_\tau,$\\
+$\delta_\tau f(\xi) = \Sigma^{q+1}_1 (-1)^{i+1}[a_i.f(\partial_i\xi) - f(a_i.\partial\xi)]$.\\
+The q-th cohomology space of the total complex is denoed by
+$$H^q_\tau(A,V) = \frac{Ker(\delta_\tau: C^q\tau \rightarrow C^{q+1}_\tau)}{\delta_\tau(C^{q-1}_\tau)}.$$
+\subsection{Scalar Complexes $C_{KV}(A,R)$ and $C_\tau(A,R)$.}
+Herenceforth 
+$$A = (\mathcal{X}(M),\nabla)$$
+and 
+$$V = C^\infty(M).$$
+The scalar cochain complexes $C_{KV}(A,R)$ is $\mathbb{Z}$-graded as it follows,\\
+$C^q_{KV}(A,R) = 0$ for $q < 0$,\\
+$C^0_{KV}(A,R) = J(C^\infty(M))$,\\
+$C^q_{KV}(A,R) = Hom(A^{\otimes q},R)$ if $q > 0$.\\
+The vector space is graded as it follows,\\  
+$C^q_\tau(A,R) = 0$ if $q < 0,$\\
+$C^0_\tau(A,R)= C^\infty(M),$ if $q > 0$.\\
+$C^q_\tau(A,R) = Hom(A^{\otimes q},C^\infty(M))$ if $q > 0$.\\
+\subsection{Links with the De Rham complex.}
+We consider the real De Rham complex which is graded as it follows,
+$$\Omega(M) = \oplus \Omega^q(M,R),$$
+Where
+$$\Omega^q(A,R) = Hom(\Lambda^qA,C^\infty(M)).$$
+
+The operator 
+$$d:\quad \Omega^q(M)\rightarrow \Omega^{q+1}(M)$$
+is defined as it follows,
+$$d\omega (a_0 \wedge .. \wedge a_{q} = \Sigma^{q}_0 (-1)^i a_i.\omega(.. \wedge \hat{a}_i \wedge..) + \Sigma_{i < j}(-1)^{i+j}\omega ([a_i,a_j] \wedge.. \wedge \hat{a}_i \wedge.. \hat{a}_j \wedge..).$$
+The inclusion map 
+$$\Omega^q(M) \subset C^q_\tau(A,R)$$
+yields the following cochain complex injective morphism
+$$(\Omega(M),d) \rightarrow (C_\tau(A,R),\delta_\tau).$$
+The quotient complex is denoted by
+$$(Q,d) = \frac{(C_\tau(A,R),\delta)}{(\Omega(M),d)},$$
+Links of de Rham cohomology with the total KV cohomology emerge from the following short exact sequence of cochain complexes,
+$$O \rightarrow (\Omega(M),d)\rightarrow (C_\tau(A,R),\delta\tau)\rightarrow (Q,d)\rightarrow 0.$$
+
+\subsection{Tensor product of two KV complexes}
+In the framework of statistical geometry we will be interest face spectral sequences which arise from particular double complexes.
+We consider two Koszul-Vinberg algebras $A$ and $A^\star$. Let W be of left KV module of the both $A$ and $A^\star$. From this situation arise the following four cochain complexes:\\
+$(I): C_{KV}(A,W)$,\\
+$(II): C_{KV}(A^\star,W)$,\\
+$(III): C_\tau(A,W)$,\\
+$(IV): C_\tau(A^\star,W).$\\
+Let us consider the vector space $C(W)$ which is by-graded by the vector space
+$$ C^{q,p} = C^q_\tau(A,W) \otimes C^p_\tau(A^\star,W).$$
+We set
+$$C^m = \Sigma_{q+p = m} C^{q,p}.$$
+Given $$\alpha \otimes \beta \in C^{q,p}$$
+we put
+$$\delta(\alpha\otimes\beta) = [ \delta_\tau \alpha\otimes \beta + (-1)^q\alpha \otimes \delta_\tau \beta] \in C^{q+1,p} \oplus C^{q,p+1}$$
+It is obvious that 
+$$\delta \circ \delta = 0.$$
+The cohomology space ${H^q,p}$ is defined by 
+$$ H^{q,p}  = \frac{ker(\delta: C^{q,p}\rightarrow C^{q+1,p} \oplus C^{q,p+1})}{im(\delta)\cap C^{q,p}}.$$
+In Hessian manifolds statistical manifolds solutions of jauge equations gives rise to statistical 2-webs. These 2-webs are canonically associated tensor products of cochain complexes the cohomology of which can be calculated with spectral sequences.
+Situations as in (I), (II), (III), (IV) arise in any Hessian manifold $(M,g,\nabla)$.\\
+\section{Spectral sequences}
+We recall the definition of spectral sequences of cochain comlexes.
+\begin{defn} A cohomology spectral sequence is a sequence of cochain complexes $$(E_r,d_r)$$ 
+such that
+$$H(E_r,d_r) = E_{r+1}.$$
+\end{defn}
+In the present work our concern is a Quantitative approach to double spectral sequences in the information geometry. Our aim is to construct some relevant (sheaves of) double spectral sequence  $$( E^{p,q}_r,d^{r,-r+1}_r ).$$
+In other words,
+$$d^{r,-r+1}_r:\quad E^{p,q}_r \rightarrow E^{p + r,q - r + 1}_r.$$
+In the next sections our aim is to point out that from the methods of the information geometry emerge relevant double spectral sequences.
+\section{Statistical structures}
+Henceforth the framework is the category whose objects $(M,g,\nabla,\nabla^\star)$ where \\
+(i) $(M,g)$ is a positive definite Riemannian manifold,\\
+(ii) $(\nabla,\nabla^\star)$ is a pair of torsion free Koszul connections on TM which are subject to the following identity\\
+(iii) $Xg(Y,Z) - g(\nabla_XY,Z) - g(Y,\nabla^\star_XZ)$\\
+We keep the notation in Section 2 and in Section 3.\\
+We concerned with the gauge equation of the couple $(\nabla,\nabla^\star)$. Let $\theta$ be a solution of that gauge equation, then we define another pair of solutions $(\Theta,\Theta^\star$ by the following identities:
+$$2g(\Theta(X),Y) = g(\theta(X), Y) + g(X, \theta(Y)),$$
+$$2g(\Theta^\star(X),Y) = g(\theta(X), Y) - g(X, \theta(Y)).$$
+T
+All of the following four distributions are regular and are 
+in involution,\\
+$\left\{Ker(\Theta),Im(\Theta), Ker(\Theta^\star), Im(\Theta^\star)\right\}.$ Furthermore one has the following 2-webs,
+
+$$TM = K \oplus I,$$ 
+$$TM = K^\star \oplus I^\star$$ 
+where
+$$K = ker(\Theta),$$
+$$I = im(\Theta),$$
+$$K^\star = ker(\Theta^\star),$$
+$$I^\star = im(\Theta^\star).$$
+Other remarkable properties of these distributions are the following identities:
+$$\nabla_XK = K,$$
+$$\nabla_XK^\star = K^\star,$$
+$$\nabla^\star_XI = I,$$
+$$\nabla^\star_XI^\star = I^\star.$$
+
+\textit{FACT.1: If either $(M, g,\nabla)$ or $(M, g, \nabla^\star)$ are Hessian structure then $K$, $K^\star$, $I$ and $I^\star$ are Hessian foliations. Thus any of the pairs $(K,I)$ and $(K^\star,I^\star)$ gives rise to double cochain complex.} \\
+
+\textit{FACT.2: It would be remembered that a foliated manifold carries in addition to its total de Rham complex two other remarkable complexes which are the complex of foliated forms and the complex of basic forms.}\\
+\subsection{Tensor products}
+For every non negative integer q the dual vector spaces 
+$\Gamma(K^{\otimes q})$ and of $\Gamma(\Lambda^qK)$ are denoted by  $C^q(K)$ and by $\Omega^q_K(M)$ respectively. Let us put
+$$\Omega_K(M) = \oplus_q \Omega^q_K(M),$$
+$$C(K) = \oplus_qC^q(K).$$
+It makes sense to restrict the de Rham operation to $\Omega_K(M)$ in order to define the following cochain complex,
+$$\rightarrow \Omega^{q-1}_K(M) \rightarrow \Omega^q_K(M) \rightarrow \Omega^{q+1}_K(M) \rightarrow $$
+In any Hessian manifold we involve \textit{FACT.1} we use the operators $\delta_{KV}$ and $\delta_\tau$ to write down the KV cochain complexes $[C(K),\delta_\tau]$ and $[C(K),\delta_\tau]$,
+$$[C(K),\delta_{KV}]:\quad 0\rightarrow J(C^\infty(M)) \rightarrow ... \rightarrow C^{q-1}(K)\rightarrow C^q(K)\rightarrow C^{q+1}(K)\rightarrow $$
+$$[C(K),\delta_\tau]:\quad 0\rightarrow C^\infty(M)\rightarrow..\rightarrow C^{q-1}(K)\rightarrow C^q(K)\rightarrow C^{q+1}(K)\rightarrow $$
+
+
+
+The cochain complex above is nothing else than
+$$\rightarrow C^{q-1}_{KV}(A_K,R)\rightarrow  C^q_{KV}(A_K,R)\rightarrow C^{q+1}_{KV}(A_K,R)\rightarrow, $$
+where
+$$A_K = \Gamma(K = ker(\Theta)).$$
+Similar complexes are attached to three other distributions $I$, $K^\star$ and $I^\star$.
+\subsection{Double complexes in a statistical manifold}
+In a statistical manifold $(M,g,\nabla,\nabla^\star)$ let $\theta$ be a solution of the jauge equation of $(\nabla^\star,\nabla$. It is associated with gives the following two 2-webs
+$(K,I$ and $(K^\star,I^\star)$.\\
+We are concerned with the two de Rham double complexes:  
+$$\Omega(K,I) = \oplus_{q,p}\Omega_K(M)\otimes \Omega^p_I(M),$$
+$$\Omega(K^\star,I^\star) = \oplus_{q,p}\Omega^q_{K^\star}(M)\otimes\Omega^p_{I^\star}(M)$$
+\subsection{Double complexes in a Hessian manifold}
+In a Hessian manifold $(M,g,\nabla,\nabla^\star)$ we are concerned with de Rham double complexes which derive from 2-webs
+$$\Omega(K,I)$$
+$$\Omega(K^\star,I^\star)$$
+To deal properies of the staistical $(g,\nabla,\nabla^\star)$ we involve the two Koszul-Vinberg algebras:
+$$A = \Gamma(TM), \nabla),$$
+$$A^\star = \Gamma(TM),\nabla^\star).$$
+Thus we face four complexes:
+$$C_{KV}(A,R),$$
+$$C_{KV}(A^\star,R),$$
+$$C_\tau(A,R),$$
+$$C_\tau(A^\star,R).$$
+We are interested two double KV complexes
+$$C_{KV}(A,A^\star) = \oplus_{q,p}C^q_{KV}(A,R)\otimes C_{KV}(A^\star,R)$$
+$$C_\tau(A,A^\star) = \oplus_{q,p}C^q_\tau(A,R)\otimes C^p_\tau(A^\star,R).$$
+Let G be the group of symmetries of $(M,g,\nabla,\nabla^\star)$; it is the finite dimensional Lie group 
+$$G = Isom(M,g)\cap Aff(M,\nabla).$$
+The cohomology spaces of $C_{KV}(A,A^\star)$ and of $C_\tau(A,A^\star)$ are denoted by
+$$H_{KV}(\nabla,\nabla^\star) = \oplus_{q,p}H^{q,p}_{KV}(A,A^\star),$$
+$$H_\tau(\nabla,\nabla^\star) = \oplus_{q,p} H^{q,p}_\tau(A,A^\star)$$
+Of course the cohomology space above is a geometric invariant of G.
+\textit{}A forthcoming section will be devoted to calculate the cohomology of double complexes which are defined above. Before dealing with these calculations we go introduction other useful materials which will be involved. These materials derive from   persistent simplicial homologies which are related with both the Hessian equation of the gauge equation.\\
+\section{Gauge equation on statistical and persistent homology.}
+We fix a statistical
+
+
+
+
+
+\section{Calculations of cohomology of double complexes}
+
+
+
+
+
+
+

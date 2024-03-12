@@ -1,7 +1,7 @@
 \section{The gauge equation}
 Let \begin{tikzcd}
     E \ar[r,"\pi"] & M 
-\end{tikzcd} be a vector bundle. An affine connection $\nabla$ is a $\R$-linear mapping \citep{husemöller2013fibre}:
+\end{tikzcd} be a vector bundle. An affine connection $\nabla$ is a $\R$-linear mapping \citep{husemoller2013fibre}:
 \begin{equation}
     \label{eq:affine_connection}
    \nabla \colon \Gamma(E) \to \Gamma\left( T^\star M \otimes E \right)
@@ -65,7 +65,7 @@ be the bundle obtained by dualizing $E$ fiberwise.  A section $\theta \in \Gamma
  \begin{equation}
      \label{eq:nabla_duality_relation}
      \left( \nabla^\star \xi \right)\left(s\right) = 
-     \xi(s) - \xi\left(\nabla s\right)
+     d(\xi(s)) - \xi\left(\nabla s\right)
  \end{equation}
  \end{defn}
  \begin{prop}
@@ -85,5 +85,107 @@ be the bundle obtained by dualizing $E$ fiberwise.  A section $\theta \in \Gamma
       = \left(\theta^\star \nabla_1^\star \xi \right)(s)
  \end{align}
  \end{proof}
- Given a couple of connections $\left(\nabla_1 \nabla_2\right)$, the difference $D_{1,2} = \nabla_1 - \nabla_2$ is a 
+ Given a couple of connections $\left(\nabla_1 \nabla_2\right)$, the difference $D_{1,2} = \nabla_1 - \nabla_2$ is a section of $\Gamma\left( 
+ TM^\star \otimes TM^\star \otimes E\right).$ Using it, the gauge equation \ref{def:gauge_equation} can rewritten as a commutation relation:
+ \begin{equation}
+     \label{eq:gauge_commutation}
+     \nabla_2 \theta - \theta \nabla_2 + D_{1,2} \theta = 0
+ \end{equation}
+ Let $\tilde{E}$ be the bundle $E \oplus E^\star$. The bilinear form:
+ \begin{equation}
+     \label{eq:bilinear_etilde}
+     B \colon \left(
+     X+\alpha,Y+\beta
+     \right) \in \tilde{E}^2 \to \beta(X)+\alpha(Y)
+ \end{equation}
+ is non-degenerate, namely:
+ \begin{equation}
+ \label{eq:non_degenerate_b}
+ \forall Y+\beta \in \tilde{E} B\left( X + \alpha , Y + \beta \right) = 0 \Rightarrow X+\alpha = 0.
+ \end{equation}
+ \begin{prop}
+ \label{prop:b_parallel}
+ A $(1,1)$-tensor $\theta$ on $E$ satisfies the gauge equation for a couple of connections $\left( \nabla_1, \nabla_2\right)$ if and only the bilinear form:
+ \begin{equation}
+     \label{eq:bilinear_theta}
+     B_\theta \colon \left(
+     X+\alpha,Y+\beta
+     \right) \to B\left(X + \alpha, \theta Y + \theta^\star 
+     Y \right)
+ \end{equation}
+ is parallel with respect to the connection $\tilde{\nabla} = \nabla_2 \oplus \nabla_1^\star.$
+ \end{prop}
+ \begin{proof}
+ By definition:
+ \begin{equation}
+  B\left(X + \alpha, \theta Y + \theta^\star 
+     Y \right) = \alpha\left(
+     \theta Y \right) + \theta^\star \beta \left( X
+     \right)
+ \end{equation}
+ Taking the differential yields:
+ \begin{align}
+  d\left(\alpha( \theta Y) \right) & =
+ \left(\nabla_1^\star\alpha \right)(\theta Y) +
+ \alpha\left(
+ \nabla_1 \theta Y
+ \right) = \left(\theta^\star `\nabla_1\star \alpha \right) (Y) + 
+ \alpha\left(
+  \theta \nabla_2 Y
+ \right) \\
+ & = \left(\nabla_2^\star \theta^\star \alpha \right)(Y)  + 
+ \alpha\left(
+  \nabla_1 \theta Y
+ \right)
+ \end{align}
+ and symmetrically:
+ \begin{align}
+   d\left((\theta^\star \beta)( X) \right) & = d\left(\beta)( \theta X) \right) \\
+    & = \left(\nabla_2^\star \theta^\star \beta \right)(X)  + 
+ \beta\left(
+  \nabla_1 \theta X
+ \right)
+ \end{align}
+ Now:
+ \begin{align}
+ &\tilde{B_\theta}\left(X+\alpha, Y + \beta\right)= \\
+ &  
+ d{B_\theta}\left(X+\alpha, Y + \beta\right) 
+ -B_\theta\left(\tilde{\nabla}(X+\alpha),Y+\beta\right)
+ -B_\theta\left(X+\alpha,\tilde{\nabla}(Y+\beta)\right) = \\
+ & =  d{B_\theta}\left(X+\alpha, Y + \beta\right) 
+ -\beta\left( \nabla_1 \theta X \right) +
+ \left(\nabla_2^\star \theta^\star \alpha\right)(Y) 
+  -\alpha\left( \nabla_1 \theta X \right) +
+ \left(\nabla_2^\star \theta^\star\right) \beta(X) = 0
+ \end{align}
+ Conversely, if $B_\theta$ is $\tilde{\nabla}$-parallel, then, for any couple $(X+\alpha,Y+\beta)$:
+ \begin{equation}
+    \alpha \left( \left(\nabla_1 \theta - \theta \nabla_2\right)Y\right) + 
+    \beta \left(\left(\nabla_1 \theta - \theta \nabla_2 \right)  X \right) = 0
+ \end{equation}
+ Taking, for example, $\alpha = 0$, $\beta$ arbitrary, it comes:
+ \begin{equation}
+     \left(\nabla_1 \theta - \theta \nabla_2 \right)  X = 0
+ \end{equation}
+ proving that the couple $\left( \theta_1, \theta_2 \right)$ satisfies the gauge equation.
+ \end{proof}
+ An immediate corollary is:
+ \begin{cor}
+ \label{cor:invariance_kernel}
+ The kernel of $\tilde{\theta} = \theta \oplus \theta^*$ is 
+ $\tilde{\nabla}$-invariant, hence the kernel of $\theta$ (resp. $\theta^\star$) is $\nabla_2$ (resp. $\nabla_1^\star$) invariant.
+ \end{cor}
+ \begin{proof}
+ The kernel of $B$ is $\{0\}$, so if:
+ \begin{equation}
+     \forall Y + \beta \in \tilde{E}, \, B_\theta \left( X+\alpha, Y+\beta\right) = B(\theta X + \theta^\star \alpha, Y + \beta) = 0
+ \end{equation}
+ Then $\theta X + \theta^\star \alpha = 0$ and $X + \alpha \in \ker \tilde{\theta}.$ Given a basis of $\ker \tilde{\theta}$ at a point $p \in M$, parallel transporting it by $\tilde{\nabla}$ yields another basis of $\ker \tilde{\theta}$ at an arbitrary point $q\in M$, hence the claim.
+ \end{proof}
+ \begin{rem}
+Corollary \ref{cor:invariance_kernel} implies by parallel transport that the dimension of the kernel of $\theta$ (resp. $\theta^\star$) is a constant, hence the rank of $\theta$ (resp. $\theta^\star$) is also a constant. 
+ \end{rem}
+
+
  
