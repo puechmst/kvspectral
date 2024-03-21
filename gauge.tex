@@ -1,7 +1,8 @@
 \section{The gauge equation}
+\label{sec:gauge_equation}
 Let \begin{tikzcd}
     E \ar[r,"\pi"] & M 
-\end{tikzcd} be a vector bundle. An affine connection $\nabla$ is a $\R$-linear mapping \citep{husemoller2013fibre}:
+\end{tikzcd} be a vector bundle. A Koszul connection $\nabla$ is a $\R$-linear mapping \citep{husemöller2013fibre}:
 \begin{equation}
     \label{eq:affine_connection}
    \nabla \colon \Gamma(E) \to \Gamma\left( T^\star M \otimes E \right)
@@ -27,17 +28,17 @@ be the bundle obtained by dualizing $E$ fiberwise.  A section $\theta \in \Gamma
  \end{equation} 
  \begin{defn}
     \label{def:gauge_equation}
-    Let $\left( \nabla_1, \nabla_2 \right)$ be a couple of affine connections. A $(1,1)$-tensor $\theta$ is said to be a solution of the gauge equation if for any $s \in \Gamma(E)$:
+    Let $\left( \nabla_1, \nabla_2 \right)$ be a couple of Koszul connections. A $(1,1)$-tensor $\theta$ is said to be a solution of the gauge equation if for any $s \in \Gamma(E)$:
     \begin{equation}
         \label{eq:gauge_equation}
-        \nabla_1 \theta s = \theta \nabla_2 s
+        \nabla_2 \theta s = \theta \nabla_1 s
     \end{equation}
     or equivalently if the next diagram commutes:
     \begin{equation}
         \label{eq_gauge_diagram}
          \begin{tikzcd}
-     \Gamma\left( E \right) \ar[r, "\nabla_2"] \ar[d,"\theta"] & \Gamma\left( T^\star M \otimes E\right) \ar[d,"Id \otimes \theta"] \\
-      \Gamma\left(E \right) \ar[r,"\nabla_1"] & \Gamma\left( T^\star M \otimes E\right)
+     \Gamma\left( E \right) \ar[r, "\nabla_1"] \ar[d,"\theta"] & \Gamma\left( T^\star M \otimes E\right) \ar[d,"Id \otimes \theta"] \\
+      \Gamma\left(E \right) \ar[r,"\nabla_2"] & \Gamma\left( T^\star M \otimes E\right)
      \end{tikzcd}
     \end{equation}
  \end{defn}
@@ -47,13 +48,22 @@ be the bundle obtained by dualizing $E$ fiberwise.  A section $\theta \in \Gamma
  \begin{equation}
      \label{eq:eq_local_gauge_diagram}
      \begin{tikzcd}
-     \Gamma\left(U; E \right) \ar[r, "\nabla_2"] \ar[d,"\theta_U"] & \Gamma\left( U; T^\star M \otimes E\right) \ar[d,"Id \otimes \theta_U"] \\
-      \Gamma\left(U; E \right) \ar[r,"\nabla_1"] & \Gamma\left( U; T^\star M \otimes E\right)
+     \Gamma\left(U; E \right) \ar[r, "\nabla_1"] \ar[d,"\theta_U"] & \Gamma\left( U; T^\star M \otimes E\right) \ar[d,"Id \otimes \theta_U"] \\
+      \Gamma\left(U; E \right) \ar[r,"\nabla_2"] & \Gamma\left( U; T^\star M \otimes E\right)
      \end{tikzcd}
  \end{equation}
  with $U$ an open subset of $M$ and $\theta_U \in \Gamma \left(
  U; E^\star \otimes E 
  \right).$
+ The above definitions can be generalized to arbitrary vector bundles over $M$ giving rise to a category $\gaugecat$ whose objects are couples $(E,\nabla)$, with $E$ a vector bundle on $M$ and $\nabla$ a Koszul connection on $E$ and morphisms are bundle morphisms $\theta \colon E \to F$ such that $(E, \nabla_1) \to (F, \nabla_2)$ if the diagram:
+   \begin{equation}
+        \label{eq:gauge_morphism}
+         \begin{tikzcd}
+     \Gamma\left( E \right) \ar[r, "\nabla_1"] \ar[d,"\theta"] & \Gamma\left( T^\star M \otimes E\right) \ar[d,"Id \otimes \theta"] \\
+      \Gamma\left(F \right) \ar[r,"\nabla_2"] & \Gamma\left( T^\star M \otimes F\right)
+     \end{tikzcd}
+    \end{equation}
+ commutes.
  \begin{defn}
  \label{def:dual_connection}
  Let be $\nabla$ be an affine connection. Its dual is the affine connection:
@@ -86,11 +96,51 @@ be the bundle obtained by dualizing $E$ fiberwise.  A section $\theta \in \Gamma
  \end{align}
  \end{proof}
  Given a couple of connections $\left(\nabla_1 \nabla_2\right)$, the difference $D_{1,2} = \nabla_1 - \nabla_2$ is a section of $\Gamma\left( 
- TM^\star \otimes TM^\star \otimes E\right).$ Using it, the gauge equation \ref{def:gauge_equation} can rewritten as a commutation relation:
+ TM^\star \otimes TM^\star \otimes E\right).$ Using it, the gauge equation \ref{def:gauge_equation} can rewritten as:
  \begin{equation}
      \label{eq:gauge_commutation}
      \nabla_2 \theta - \theta \nabla_2 + D_{1,2} \theta = 0
  \end{equation}
+Considering $\theta$ as a $O$-form with values in $E^\star \otimes E$, equation \ref{eq:gauge_commutation} may be rewritten as:
+\begin{equation}
+    d^{\nabla_2} \theta + D_{1,2}\theta = 0
+\end{equation}
+where $d^{\nabla_2}$ is the exterior covariant derivative
+associated with the connection $\nabla_2.$ When $\nabla_2$ is flat, $d^{\nabla_2}d^{\nabla_2} = 0$ and thus 
+$d^{\nabla_2}(D_{1,2}\theta) = 0.$
+
+We recall that the Gauge group $\mathcal{G}(E)$ is the set of bundle isomorphisms: 
+\begin{equation}
+    \label{eq:gauge_group}
+    \begin{tikzcd}
+    E \ar[r,shift left = 1.5ex, "U"] \ar[rd, shift right=0.5ex] & E \ar[l,"U^{-1}"] \ar[d] \\
+    & M
+    \end{tikzcd}
+\end{equation}
+Given a connection $\nabla$, $U \nabla U^{-1}$ is also a connection.
+\begin{prop}
+\label{prop:conjugate_connections}
+Let the triple $\left(\nabla_1, \nabla_2,\theta \right)$ be a solution of the gauge equation $\nabla_1 \theta = \theta \nabla_2.$ 
+For any couple $(U,V)$ in $\mathcal{G}(E)$, the triple:
+\[
+\left( U \nabla_1 U^{-1}, U \theta V^{-1}, V \nabla_2 V^{-1} \right)
+\]
+is a solution of a gauge equation.
+\end{prop}
+\begin{proof}
+Starting with $\nabla_1 \theta = \theta \nabla_2$, it comes:
+\begin{equation}
+U^{-1} U \nabla_1 U^{-1} U \theta V^{-1} V = U^{-1} U \theta V^{-1} V \nabla_2 V^{-1} V 
+\end{equation}
+Composing by $U$ to the left and $V^{-1}$ to the right yields the result.
+\end{proof}
+Proposition \ref{prop:conjugate_connections} indicates that the existence of a solution does not depend on a particular choice of frame-coframe for representing it. Furthermore, locally, it is always possible to assume a $\theta$ of the form:
+\begin{equation}
+    \label{eq:reduced_theta}
+    \theta = \left( \begin{array}{c|c} \text{Id} & 0 \\ \hline
+    0 & 0
+    \end{array} \right)
+\end{equation}since a pair $U,V$ such that $U \theta V^{-1}$ has the reduced form of eq.\ref{eq:reduced_theta} exists by a standard linear algebra argument. Global reduction is, however, not possible as transitions functions will generally not preserve the diagonal structure.
  Let $\tilde{E}$ be the bundle $E \oplus E^\star$. The bilinear form:
  \begin{equation}
      \label{eq:bilinear_etilde}
@@ -185,7 +235,192 @@ be the bundle obtained by dualizing $E$ fiberwise.  A section $\theta \in \Gamma
  \end{proof}
  \begin{rem}
 Corollary \ref{cor:invariance_kernel} implies by parallel transport that the dimension of the kernel of $\theta$ (resp. $\theta^\star$) is a constant, hence the rank of $\theta$ (resp. $\theta^\star$) is also a constant. 
- \end{rem}
-
-
- 
+\end{rem}
+\begin{rem}
+The kernel of $\theta^\star$ is the set of differential forms vanishing on the image of $\theta.$ The knowledge of the kernel of $B_\theta$ thus completely characterize $\ker \theta$ and $\im \theta.$ In particular, $\theta$ has constant rank.
+\end{rem}
+When there exists a Riemannian metric on the manifold $M$, the gauge equation can be specialized to pairs of connections on $TM$ related by duality. 
+\begin{defn}
+    \label{def:conjugate_connection}
+    Let $\nabla$ be an affine connection. Its conjugate with respect to $g$ (often referred as the dual connection) is the connection $\nabla^+$ defined by the relation:
+    \begin{equation}
+    \label{eq:conjugate_connection}
+    \forall Z \in TM, \forall r,s \in \Gamma \left(TM 
+    \right), Z\left( g(r,s) \right) = g\left(\nabla_Z r, s\right) + 
+    g\left( r, \nabla_Z^+ s\right)
+    \end{equation}
+\end{defn}
+\begin{rem}
+The most common notation for the conjugate connection is $\nabla^\star.$ In the present text, we adopt $\nabla^+$ to distinguish from the connection on $E^\star.$
+\end{rem}
+\begin{defn}
+\label{def:endo_conjugate}
+Let $\theta$ be a bundle morphism on $TM.$ Its conjugate,
+denoted $\theta^+$, is the bundle morphism defined by:
+\begin{equation}
+    \label{eq:endo_conjugate}
+    \forall X,Y \in TM, \, g\left( \theta X, Y\right) = 
+    g\left( X, \theta^+ Y\right)
+\end{equation}
+\end{defn}
+\begin{prop}
+\label{prop:inverse_unitary}
+If $U \colon TM \to TM$ is a unitary bundle isomorphism, that is:
+\[
+\forall X,Y \in TM, \, g\left( UX, UY \right) = g(X,Y)
+\]
+Then $U^{-1} = U^+.$
+\end{prop}
+\begin{prop}
+\label{prop:unitary_conjugate}
+Let $\nabla$ be a connection and $U$ be a unitary bundle isomorphism, then:
+\begin{equation}
+\label{eq:unitary_conjugate}
+\left(U \nabla U^+\right)^+ = U \nabla^+ U^+
+\end{equation}
+\end{prop}
+\begin{proof}
+If $U$ is unitary, so is $U^+.$
+Let $Z \in TM, r,s in \Gamma \left( TM \right)$. Then:
+\begin{align}
+    Z\left(g(r,s) \right) & = Z\left(g(U^+r,U^+s) \right)\\
+    &= g\left(\nabla_Z U^+ r,  u^+ s\right) + g\left(U^+ r, \nabla_Z^+s \right) \\
+    &= g\left(U \nabla_Z U^+ r , s\right) +
+    g\left(r , U \nabla_Z^+ U^+ s\right)
+\end{align}
+and the claim follows.
+\end{proof}
+A is proposition \ref{prop:conjugate_connections}:
+\begin{prop}
+\label{prop:unitary_conjugate_gauge}
+If the triple $\left(\nabla,\nabla^+,\theta \right)$ satisfies the gauge equation $\nabla \theta = \theta \nabla^+$, so does  $\left(U \nabla, U^+, U \nabla^+ U^+, U^+ \theta U\right)$ for any unitary isomorphism $U.$
+\end{prop}
+\begin{rem}
+If $\theta$ is normal, that is $\left [ \theta, \theta^+\right ] = 0$, and the triple $\left(\nabla,\nabla^+,\theta \right)$ satisfies the gauge equation $\nabla \theta = \theta \nabla^+$, then, locally, there exists a unitary isomorphism $U$ such that $U^+ \theta U$ is diagonal and $\left(U \nabla, U^+, U \nabla^+ U^+, U^+ \theta U\right)$ satisfies a gauge equation. This is again a well-known fact from linear algebra since $\theta$ is locally diagonalizable in an orthonormal frame. As in the case of eq. \ref{eq:reduced_theta}, this is generally not true globally.
+\end{rem}
+\begin{prop}
+Using the musical isomorphisms 
+    $
+    \begin{tikzcd}
+    TM \ar[r,shift left, "\flat"] & T^\star M \ar[l,shift left, "\sharp"]
+    \end{tikzcd}
+    ,$
+it comes:
+\[
+\forall X\in TM,\alpha \in T^\star M \, \left(\nabla^+_X \alpha^\sharp \right) = \left(
+\nabla_X \alpha\right)^\sharp
+\]
+\end{prop}
+\begin{proof}
+For any $X,Y,Z \in TM$:
+\[
+Z \left( g(X,Y) \right) = g\left( \nabla_Z X, Y \right) +
+g\left( X, \nabla^+_Z Y \right)
+\]
+Passing to forms, for any $Z \in TM$ $\alpha in T^\star M$, $ X \in TM$:
+\[
+Z \left( g(X, \alpha^\sharp) \right) = g\left( \nabla_Z X, \alpha^\sharp \right) +
+g\left( X, \nabla^+_Z \alpha^\sharp \right)
+\]
+Now:
+\[
+\begin{split}
+Z \left( g(X, \alpha^\sharp) \right) & = Z \left(\alpha(X)\right) = 
+\left(\nabla^\star \alpha \right)(X) + \alpha \left( \nabla_Z X\right) \\
+&  g\left(X,\left(\nabla^\star \alpha\right)^\sharp\right) +
+g \left(\nabla_Z X , \alpha^\sharp \right)
+\end{split}
+\]
+and the claim follows by identification.
+\end{proof}
+\begin{rem}
+    
+\end{rem}
+\begin{prop}
+\label{prop:parallel_g_tensor}
+Let the triple $\left(\nabla,\nabla^+,\theta \right)$ satisfies the gauge equation $\nabla \theta = \theta \nabla^+.$ The tensor:
+\begin{equation}
+    \label{eq:parallel_g_tensor}
+    g_\theta \colon (X,Y) \mapsto g\left( \theta X, Y\right)
+\end{equation}
+is $\nabla$ parallel.
+\end{prop}
+\begin{proof}
+    The tensor $B_\theta$ of proposition \ref{prop:b_parallel} can be written, using the metric, as:
+    \begin{align}
+        B_\theta\left( X+ \alpha, Y + \beta \right) &= \beta(\theta X) + \alpha(\theta Y) \\
+        & = g \left( \theta X, \beta^\sharp \right) + g \left( \alpha^\sharp , \theta Y \right)
+    \end{align}
+    Since $B_\theta$ is $\tilde{\nabla}$-parallel, the proposition follows.
+\end{proof}
+\begin{rem}
+    Defining a metric $g^\star$ on $T^\star M$ by:
+\begin{equation}
+    \label{eq:g_star_metric}
+    \forall \alpha, \beta \in T^\star M, \, g^\star(\alpha,\beta) = g\left(
+    \alpha^\sharp, \beta^\sharp
+    \right)
+\end{equation}
+The proof of proposition \ref{prop:parallel_g_tensor} also shows that the tensor:
+\[
+g_\theta^\star \colon (\alpha,\beta) \mapsto g^\star\left(\theta^\star \alpha, \beta\right)
+\]
+is $\nabla^\star$-parallel.
+\end{rem}
+Proposition  \ref{prop:parallel_g_tensor} has the important consequence that $TM$ can be split in two ways:
+\begin{equation}
+    \label{eq:split_tm}
+    TM = \ker \theta \oplus \im \theta , \, TM = \ker \theta^+ \oplus \im \theta^+.
+\end{equation}
+It is clear from proposition \ref{prop:parallel_g_tensor} that if $\theta$ is symmetric, that is $\theta = \theta^+$, the tensor:
+\begin{equation}
+(X,Y) \mapsto \frac{1}{2} g\left( \theta X, Y\right) + g\left( \theta X, Y\right)
+\end{equation}
+is $\nabla$-parallel.
+When $\theta$ is skew symmetric $\theta = -\theta^+$, the same is true for:
+\begin{equation}
+(X,Y) \mapsto \frac{1}{2} g\left( \theta X, Y\right) - g\left( \theta X, Y\right)
+\end{equation}
+As in \ref{eq:gauge_morphism}, a category so that morphisms represent gauge equation solutions. The situation is nevertheless a little bit more complicated as the dimension of the vector bundle may not agree. 
+We recall the well-known definition:
+\begin{defn}
+\label{def:metric_bundle}
+Let $E \rightarrow M$ be a vector bundle. A pseudo-riemannian metric on $E$ is a smooth bilinear $C^{\infty}(M)$-mapping $g_E \colon \Gamma(E) \times \Gamma(E) \to C^\infty(M)$ such that:
+\begin{itemize}
+\item $\forall s,s^\prime \in \Gamma(E), \, g_E(s,s^\prime) = g_E(s^\prime, s).$
+\item There exists an isomorphisme ${}^\flat \colon \Gamma(E) \to \Gamma(E^\star)$ such that, for any $s,s^\prime \in \Gamma(E)$: 
+\[
+s^\flat(s^\prime) = g_E(s,s^\prime).
+\]
+\end{itemize}
+A pseudo-riemannian metric is Riemannian if $g_E(s,s) > 0$ for any $s\neq 0$ in $\Gamma(E).$
+\end{defn}
+\begin{defn}
+\label{def:partial_iso}
+Let $E,F$ be two vector bundles on $M$ equipped with respective Riemannian metrics $g_E,g_F.$ A partial isometry from $E$ to $F$ is a bundle morphism $U$ such that the following diagram commutes:
+\begin{equation}
+    \label{eq:partial_iso}
+    \begin{tikzcd}
+        E \ar[r,"{}^\flat"] \ar[d,"U"] & E^\star \\
+        F \ar[r,"{}^\flat"] & F^\star \ar[u,"U^\star"]
+    \end{tikzcd}
+\end{equation}
+\end{defn}
+\begin{rem}
+    Definition \ref{def:partial_iso} is equivalent to the fact that for any $s,s^\prime \in \Gamma(E)$:
+    \[
+    g_F\left(Us, Us^\prime\right) = g_E\left(s,s^\prime\right).
+    \]
+\end{rem}
+\begin{defn}
+\label{def:general_dual_connections}
+Let $U \colon E \to F$ be a partial isometry and $\nabla_2$ be a Koszul connection on $F$. Its dual $\nabla_2^+$ is the connection on $E$ defined by the relation
+\begin{equation}
+    \label{eq:general_dual_connections}
+    U \nabla_2^+ = \nabla_2 U.
+\end{equation}
+\end{defn}
+\begin{defn}
+    \label{def:category_gauge_dual}
+    The category $\gaugecatu$ has objects $(E,\nabla)$ where $\nabla$ is a Koszul connection on $E$ and morphisms $(U, \theta) \colon (E, \nabla_1) \to (F, \nabla_2)$ where $U \colon E \to F$ is a partial isometry, $\theta \colon E \to F$ is a bundle morphism and $\nabla_1 = \nabla_2^+, \nabla_2 \theta = \theta \nabla_1.$
+\end{defn}

@@ -10,6 +10,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{tikz-cd}
+\usepackage{enumitem}
 
 \newcommand{\R}{\ensuremath{\mathbb{R}}}
 \newcommand{\C}{\ensuremath{\mathbb{C}}}
@@ -40,7 +41,9 @@
 \newcommand{\lc}{\ensuremath{\nabla^{\text{lc}}}}
 \newcommand{\fnet}{\ensuremath{\mathcal{N}_W}}
 \newcommand{\kldiv}[2]{\ensuremath{\textit{KL}\left( #1,#2 \right)}}
-\newcommand{\im}{\ensuremath{\textsf{im }}}
+\newcommand{\gaugecat}{\ensuremath{\mathcal{GC}}}
+\newcommand{\gaugecatu}{\ensuremath{\mathcal{GU}}}
+\DeclareMathOperator{\im}{\ensuremath{\textsf{im}}}
 \DeclareMathOperator{\ad}{ad}
 \DeclareMathOperator{\trace}{\ensuremath{\text{Tr}}}
 \DeclareMathOperator{\ext}{\ensuremath{\text{Ext}}}
@@ -52,7 +55,7 @@
 \newtheorem{cor}[thm]{Corollary}
 
 \theoremstyle{remark}
-\newtheorem*{rem}{Remark}
+\newtheorem{rem}{Remark}[section]
 
 \theoremstyle{definition}
 \newtheorem{defn}{Definition}[section]
@@ -123,38 +126,40 @@
 
 %=================================================================
 % Full title of the paper (Capitalized)
-\Title{Title}
+\Title{Spectral sequences arising from the gauge equation}
 
 % MDPI internal command: Title for citation in the left column
-\TitleCitation{Title}
+\TitleCitation{Spectral sequences arising from the gauge equation}
+
 
 % Author Orchid ID: enter ID or remove command
 \newcommand{\orcidauthorA}{0000-0000-0000-000X} % Add \orcidA{} behind the author's name
 %\newcommand{\orcidauthorB}{0000-0000-0000-000X} % Add \orcidB{} behind the author's name
 
 % Authors, for the paper (add full first names)
-\Author{Firstname Lastname $^{1,\dagger,\ddagger}$\orcidA{}, Firstname Lastname $^{2,\ddagger}$ and Firstname Lastname $^{2,}$*}
+\Author{Michel Boyom $^{1,\ddagger}$, Stephane Puechmorel $^{2,\ddagger}$* }
 
 %\longauthorlist{yes}
 
 % MDPI internal command: Authors, for metadata in PDF
-\AuthorNames{Firstname Lastname, Firstname Lastname and Firstname Lastname}
+\AuthorNames{Michel Boyom, Stephane Puechmorel}
 
 % MDPI internal command: Authors, for citation in the left column
-\AuthorCitation{Lastname, F.; Lastname, F.; Lastname, F.}
+\AuthorCitation{Boyom, M.; Puechmorel, S.}
 % If this is a Chicago style journal: Lastname, Firstname, Firstname Lastname, and Firstname Lastname.
 
 % Affiliations / Addresses (Add [1] after \address if there is only one affiliation.)
 \address{%
-$^{1}$ \quad Affiliation 1; e-mail@e-mail.com\\
-$^{2}$ \quad Affiliation 2; e-mail@e-mail.com}
+$^{1}$ \quad University of Montpellier, IMAG CNRS 
+499-554 Rue du Tuel 34090 Montpellier France ; michel.nguiffo-boyom@umontpellier.fr \\
+$^{2}$ \quad University of Toulouse, Laboratoire ENAC, 7, Avenue Edouard Belin, Toulouse France; stephane.puechmorel@enac.fr}
 
 % Contact information of the corresponding author
-\corres{Correspondence: e-mail@e-mail.com; Tel.: (optional; include country code; if there are multiple corresponding authors, add author initials) +xx-xxxx-xxx-xxxx (F.L.)}
+\corres{Correspondence: stephane.puechmorel@enac.fr}
 
 % Current address and/or shared authorship
-\firstnote{Current address: Affiliation 3.} 
-\secondnote{These authors contributed equally to this work.}
+%\firstnote{Current address: Affiliation 3.} 
+\firstnote{These authors contributed equally to this work.}
 % The commands \thirdnote{} till \eighthnote{} are available for further notes
 
 %\simplesumm{} % Simple summary
@@ -162,14 +167,14 @@ $^{2}$ \quad Affiliation 2; e-mail@e-mail.com}
 %\conference{} % An extended version of a conference paper
 
 % Abstract (Do not insert blank lines, i.e. \\) 
-\abstract{To be completed.}
+\abstract{The gauge equation is a generalization of the conjugacy relation for Koszul connection to bundle morphisms that are not isomorphisms. The existence of non-trivial solution to this equation, especially when duality is imposed upon related connections, gives important information about the geometry of the manifolds considered. In this article, we use the gauge equation to introduce spectral sequences that are further specialized to Hessian structures.}
 
 % Keywords
 \keyword{Gauge equation, spectral sequence, KV-cohomology, hessian manifold, statistical manifold.} 
 
 % The fields PACS, MSC, and JEL may be left empty or commented out if not applicable
 %\PACS{J0101}
-%\MSC{}
+\MSC{53A60,53C07, 53C12}
 %\JEL{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -216,7 +221,7 @@ $^{2}$ \quad Affiliation 2; e-mail@e-mail.com}
 \begin{document}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\renewcommand{\arraystretch}{1.5}
 
 \input{intro}
 \input{gauge}
@@ -236,12 +241,12 @@ $^{2}$ \quad Affiliation 2; e-mail@e-mail.com}
 
 
 % Only for journal Nursing Reports
-%\publicinvolvement{Please describe how the public (patients, consumers, carers) were involved in the research. Consider reporting against the GRIPP2 (Guidance for Reporting Involvement of Patients and the Public) checklist. If the public were not involved in any aspect of the research add: ``No public involvement in any aspect of this research''.}
+%\publicinvolvement{Please describe how the public (patients, consumers, carers) were involved in the research. Consider reporting against the GRIPP2 (Guidance for Reporting Involveme!nt of Patients and the Public) checklist. If the public were not involved in any aspect of the research add: ``No public involvement in any aspect of this research''.}
 
 % Only for journal Nursing Reports
 %\guidelinesstandards{Please add a statement indicating which reporting guideline was used when drafting the report. For example, ``This manuscript was drafted against the XXX (the full name of reporting guidelines and citation) for XXX (type of research) research''. A complete list of reporting guidelines can be accessed via the equator network: \url{https://www.equator-network.org/}.}
 
-\acknowledgments{In this section you can acknowledge any support given which is not covered by the author contribution or funding sections. This may include administrative and technical support, or donations in kind (e.g., materials used for experiments).}
+\acknowledgments{}
 
 \conflictsofinterest{ The authors declare no conflicts of interest.} 
 
@@ -332,5 +337,4 @@ $^{2}$ \quad Affiliation 2; e-mail@e-mail.com}
 \PublishersNote{}
 \end{adjustwidth}
 \end{document}
-
 

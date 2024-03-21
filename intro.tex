@@ -1,8 +1,20 @@
 \section{Introduction}
+The concept of a statistical manifold comes from the field of information geometry. Such an object is defined as a quadruple $\left(
+M, g, \nabla, \nabla^+\right)$ where $(M,g)$ is a smooth Riemannian manifold and $\nabla, \nabla^+$ are torsion-free Koszul connections on $TM$ that satisfy a metric relation \citep{amari2016information}:
+\[
+\forall X,Y,Z \in TM, \, Z\left(g(X,Y)\right) = 
+g\left(\nabla_Z X, Y \right) +g \left(X, \nabla^+_Z Y \right)
+\]
+One connection $\nabla$ or $\nabla^+$ entirely defines the other one, but the extra assumption of both being torsion-less is not automatically satisfied. Another important concept coming from the general theory of Koszul connections is the gauge equation. Two connections $\nabla_1,\nabla_2$ on a vector bundle \begin{tikzcd}
+    E \ar[r,"\pi"] & M 
+\end{tikzcd} are said to satisfy a gauge equation if there exists a bundle morphism $\theta \colon E \ to E$ such that: $\nabla_1 \theta = \theta \nabla_2.$ When $\theta$ is an isomorphism, this is nothing but saying that $\nabla_1, \nabla_2$ are in the same conjugacy class under the action of the gauge group, but in the general situation important information is gained on the geometry of $M.$
+
+In the present work, we focus on the case where the gauge equation is satisfied by two connections $\nabla,\nabla^+$ coming from a statistical manifold. In particular, two remarkable webs are defined, that give rise to spectral sequences of interest.
+
+The paper is organized as follows: in section \ref{sec:gauge_equation}, basic facts about the gauge equation in the general settings are briefly recap, then some equivalent formulations are given and important parallel tensors are defined, in section \ref{sec:kv} the cohomology of Koszul-Vinberg algebras is introduced and double complexes defined, in section \ref{sec:spectral} introductory material on spectral sequences is given and finally in \ref{sec:statistical} the special case of statistical manifolds is investigated.
 \subsection{Notations and writing conventions}
-All manifolds are assumed to be smooth.
 Thorough this document, the next writing conventions are applied:
-$M$ is a smooth manifold. For a vector bundle  \begin{tikzcd}
+$M$ is a smooth connected manifold. For a vector bundle  \begin{tikzcd}
     E \arrow[r,"\pi"] & M
 \end{tikzcd}, the notation $\Gamma(U;E)$ with $U \subset M$ an open subset
 of the manifold $M$ stands for the $C^\infty(M)$-module of smooth sections over

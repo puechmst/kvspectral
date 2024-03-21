@@ -1,1 +1,88 @@
 \section{Application to statistical manifolds}
+\label{sec:statistical}
+
+In an introductory manner the notion a spectral sequence has been reminded in Section 5. As machineries, spectral sequences are powerful tools for homological calculations. 
+
+In a statistical structure $(M,g,\nabla,\nabla^\star)$ we have identified chain complexes and cochain complexes which are attached to solutions of the gauge equation of ($(\nabla^\star,\nabla)$. 
+
+The homology of these complexes may be approximated by some well known spectral sequences. We aim to point out some spectral sequences which are linked with the complexes which have been introduced in the precedent sections. 
+
+
+\subsection{The spectral sequences of a double complex}
+We focus the complexes which emerge from the statistical geometry.
+
+In a Hessian structure $(M,g,\nabla,\nabla^\star)$ we fix a solution $\theta$ of the gauge equation of $(\nabla^\star,\nabla)$.
+We focus on the total KV complex
+$$C_\tau(M)^n = \oplus_{[j+i = n]}C^j_\tau(A,R)\otimes C^i_\tau(A^\star,R).$$
+\subsubsection{The filtration $F^p_A(C_\tau(M))$.}
+Before pursuing we define $(d'_\tau,d"_\tau)$ as it follows:given
+$$u\otimes v \in C^j_\tau(A,R)\otimes C^i_\tau(A^\star, R),$$
+$$d'_\tau(u\otimes v) = \delta_\tau (u) \otimes v,$$
+$$d"_\tau(u\otimes v) = (-1)^j u\otimes \delta_\tau(v).$$
+$$d"_\tau = 1 \otimes \delta_\tau$$
+so that without any confusion one has
+$$d_\tau = d'_\tau + d"_\tau.$$
+To any couple $(p \leq n)$ of positive integer  we set 
+ $$ F^p_{A,n}(C_\tau(M)) = \oplus_{[j\leq p]}C^j_\tau(A,R)\otimes 
+C^{n-j}_\tau(A^\star,R), $$
+
+$$ F^p_{A^\star,n}(C_\tau(M)) = \oplus_{[j\leq p]}C^{n-j}_\tau(A,R)\otimes C^j_\tau(A^\star,R).$$
+It is easy to verify the following claims,
+$$F^p_{A,n}(C_\tau(M)) \subset F^{p+1}_{A,n}(C_\tau(M))$$
+$$d"_\tau (F^p_{A,n}(C_\tau(M)) \subset F^p_{A,n+1}(C_\tau(M));$$
+$$F^p_{A^\star,n}(C_\tau(M)) \subset F^{p+1}_{A^\star,n}(C_\tau(M)),$$
+$$d'_\tau(F^p_{A^\star,n})(C_\tau(M)) \subset F^p_{A^\star, n+1}(C_\tau(M)).$$
+Each filtration yields a spectral sequence that we denote by
+$$(E_r,d_r(A)),$$
+$$E_r(A^\star, d_r).$$
+Consider the tensor
+$$\Omega_\tau = \Omega(M)\otimes\Omega(M),d_R$$
+where $\Omega(M)$ is the de Rham complex of $M$.\\
+\textit{Remark,\citep{boyom2016}\\
+\textit{The inclusion mapping $$\Omega_\tau(M)\rightarrow C_\tau(M)$$}
+ is a complex morphism.}
+\subsection{Singular persistence of a compact statistical manifold}
+Let $(M,g,\nabla,\nabla^\star)$ be a compact statistical manifolds.
+We have involved solutions of gauge equation of $(\nabla^\star,\nabla)$ to obtain an homological persistence on $M$:
+$$\subset Sing(F_{p+1}(x))\subset Sing(F_p(x))\subset Sing(F_{p-1}(x)) \subset $$
+By canonical construction we deduce a 
+short exact sequences 
+$$ 0\rightarrow Sing(F^{p+1}(x))\rightarrow Sing(F^p(x)) \rightarrow E^p(x)\rightarrow 0,$$
+ with $$E^p(x) = \frac{Sing(F^p(x))}{Sing(F^{p+1}(x))}.$$
+This sort exact sequence yields the following long exact sequence of singular homology spaces
+$$\rightarrow H_{q+1}(F^{p+1}(x)) \rightarrow H_{q+1}(F^p(x))\rightarrow H_{q+1}(E^p(x))\rightarrow H_q(F^{p+1}(x))\rightarrow$$
+One uses the topology persistence to construct an homological exact couple whose spectral sequence converge to the singular homology $H(M)$.\\ 
+By theorem of de Rham the approach leads to de Rham algebra of $M$.\\
+Indeed by setting
+$$M = \oplus_p H(F^p(x)),$$
+$$E = \oplus_p H(E^p),$$
+the long exact homology sequence above yields the exact couple
+$$i: M \rightarrow M,$$
+$$j: M \rightarrow E,$$
+$$k: E \rightarrow M. $$ 
+In section 5 it is explained how to construct inductively the derived exact couples.
+Here let us sketch another construction to be applied to the total complex of a Hessian structure $(M,g,\nabla,\nabla^\star)$, namely  
+$$C_\tau(M)$$
+which is bi-graded by the sub-spaces 
+$$C^{q,p}_\tau(M) = C^q_\tau (A,R)\otimes C^p_\tau(A^\star)$$
+We remind the filtration
+$$F^p_{A,n}(C_\tau(M)) = \oplus_{[j \leq p]}C^j_\tau(A)\otimes C^{n-j}_\tau(A^\star).$$
+\textbf{At one side}, according to general process this filtration gives rise to an exact couple which yields a spectral sequence 
+$$E(A)= \left\{E^{j,i}_r\right\}$$
+\textbf{At another side}, the operators $d'_\tau$ and $d"_\tau$ are defined  as in 6.1.\\
+Set
+$$ H"^{j,i}(C_\tau(M)) = \frac{ker(d"_\tau: C^{j,i}_\tau(M)\rightarrow C^{j,i+1}_\tau(M))}{d"_\tau(C^{j,i-1}(M))},$$
+and 
+$$H'^jH"^i(C_\tau(M)) = \frac{ker(d'_\tau: H"^{j,i}(C_\tau(M))\rightarrow H"^{j+1,i}(C_\tau(M))}{d '_\tau(H"^{j-1,i}(C_\tau(M))}.$$
+
+Now we are in position to implement some powerful well known machineries.
+
+\begin{thm} The term $E^{j,i}_2$ of the spectral sequence $E(A)$ is isomorphic to $H^{\prime j} H^{\prime\prime i}(C_\tau(M))\clubsuit$
+\end{thm}
+
+\begin{thm} The spectral sequence $E(A)$ converges to the total cohomology of the total complex
+$$(C_\tau(M),d_\tau) \clubsuit$$
+\end{thm}
+
+For technical details readers are referred to \citep{McCleary_2000}, \citep{Whitehead1960}, \citep{maclane2012homology}.  
+

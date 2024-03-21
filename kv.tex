@@ -1,5 +1,6 @@
 \section{KV cohomology}
-The cochain complex of Koszul-Vinbeg algebras may be introduced by the following three ways:\cite{Foliations-webs-Hessian Geometry-Information Geometry-Entropy and Homology.}\\
+\label{sec:kv}
+The cochain complex of Koszul-Vinbeg algebras may be introduced by the following three ways:\citep{boyom2016,Boyom2020TheLF}\\
 Way1: From the point of view of the tensorial calculus: The brut formula,\\
 Way2: From the pointof view of the theory of categories: Simplicial objects.\\
 Way3: The point of view of the Anomalies, viz the calculation  rules.\\
@@ -22,9 +23,9 @@ $$A \times V \ni (a,v) \rightarrow a.v \in V$$
 which satisfies the following identity,
 $$(a,a',v) = (a',a,v),$$
 where
-$$(a, a',v) = (aa').v = a.(a'.v).$$
+$$(a, a',v) = (aa').v - a.(a'.v).$$
 \end{defn}
-In this paper we will be dealing with Koszul-Vinberg algebra of vector fields $\mathcal{X}(M)$ on a differentiable manifold $M$ endowed with a Koszul connection $\nabla$ whose both the Curvature tensor $R^\nabla$ and the torsion tensor $T^\nabla$ vanish identically.\\
+In this paper we will be dealing with Koszul-Vinberg algebra of vector fields $\mathcal{X}(M)$ on a differentiable manifold $M$ endowed with a Koszul connection $\nabla$ whose both the curvature tensor $R^\nabla$ and the torsion tensor $T^\nabla$ vanish identically.\\
 We put 
 $$A : = (\mathcal{X}(M), \nabla).$$
 The product on $A$ is defined as it follows,
@@ -33,7 +34,7 @@ Of course $\mathcal{X}(M)$ is a left Koszul-Vinberg module of $A$\\
 The space of smooth functions $C^\infty(M)$ is a left Koszul-Vinberg module of $A$ under the left action
 $$A \times C^\infty(M) \ni (a,f) \rightarrow df(a) \in C^\infty(M)$$
 \subsection{Vectorial cochain complexes }
-Given a Koszul-Vinberg algebra A, to any left module module V are associated the following two cochain complexes of A with coefficinets in V. One is denoted by $(C_{KV}(A,V)$ and is named KV complex. The other is denoted $C_\tau(A,V)$ and is named total KV complex. We go to remind the definition and point some framework of their efficiency.\\
+Given a Koszul-Vinberg algebra A, to any left module module V are associated the following two cochain complexes of A with coefficinets in V. One is denoted by $C_{KV}(A,V)$ and is named KV complex. The other is denoted $C_\tau(A,V)$ and is named total KV complex. We go to remind the definition of these complexes and point some domains of their efficiency.\\
 \subsubsection{The complex $C_{KV}(A,V)$}
 We set 
 $$J(V) =\left\{v \in V\quad s.t.\quad (a,a',v) = 0 \quad 
@@ -61,30 +62,32 @@ then
 $$\delta.f (\xi) = \Sigma^q_1 (-1)^{i-1}[a_i.f(\partial_i\xi) - f(X_i.\partial_i\xi)].$$
 The q-th cohomology space is denoted by
 $$H^q_{KV}(A,V) = \frac{ker(\delta: C^q_{KV}\rightarrow C^{q+1}_{KV})}{\delta (C^{q-1}_{KV})}.$$
-This cohomology is the solution of the conjecture of Gerstenhaber for the deformations of Hyperbolic structure in the sense of Koszul. The conjecture of Gerstenhaber claim that \textit{Every restrict theory of deformation generates it prper theorey of cohomology}, \cite{Gerstenbaher}.\\
-This cohomology also manages equivalence extensions of Koszul-Vinberg by Koszul-Vinberg modules. More explictly let $Ext(A,V)$ the set of equivalent classes of extensions of A by V, then one can write 
+This cohomology is the solution of the conjecture of Gerstenhaber for the deformations of Hyperbolic structure in the sense of Koszul. The conjecture of Gerstenhaber claim that \textit{Every restrict theory of deformation generates it proper theory of cohomology}, \cite{Gerstenhaber1964}.\\
+This cohomology also manages equivalence relation between extensions of Koszul-Vinberg algebras by Koszul-Vinberg modules. More explictly let $Ext(A,V)$ the set of equivalence classes of extensions of A by V, then one can write 
 $$Ext(A,V) = H^2_{KV}(A,V).$$
+In the category of modules of associative algebras and as well as in the category of modules of Lie algebras respectively, the 2nd Hochschild space $HH^2(-,-)$ and the 2nd Chevalley-Eilbenberg space $H^2_{CE}(-,-)$ play the similar role. 
 \subsubsection{Total KV complex $C_\tau(A,V)$.}
 The cochain complex $C_\tau(A,V)$ is $\mathbb{Z}$-graded by the homogeneous subspaces $C^q_\tau(A,V)$ which as it follows,\\
 $C^q_\tau = 0$  if $q < 0$, \\
 $C^0_\tau = V$, \\
-$C^q_\tau = Hom(A^{\otimes q},V)\quad if q > 0.$\\
-We use the notation in the subsubsection above. The operation $\delta_\tau$ is defined as it follows:\\
+$C^q_\tau = Hom(A^{\otimes q},V)$ if $q > 0.$\\
+We keep using the notation as in the subsubsection above. The operation $\delta_\tau$ is defined as it follows:\\
 $\delta_\tau v (a) = a.v$ if  $v\in C^0,$\\
 If $f \in C^q_\tau,$\\
 $\delta_\tau f(\xi) = \Sigma^{q+1}_1 (-1)^{i+1}[a_i.f(\partial_i\xi) - f(a_i.\partial\xi)]$.\\
-The q-th cohomology space of the total complex is denoed by
-$$H^q_\tau(A,V) = \frac{Ker(\delta_\tau: C^q\tau \rightarrow C^{q+1}_\tau)}{\delta_\tau(C^{q-1}_\tau)}.$$
+The q-th cohomology space of the total complex is denoted by
+$$H^q_\tau(A,V) = \frac{Ker(\delta_\tau: C^q_\tau \rightarrow C^{q+1}_\tau)}{\delta_\tau(C^{q-1}_\tau)}.$$
 \subsection{Scalar Complexes $C_{KV}(A,R)$ and $C_\tau(A,R)$.}
-Herenceforth 
+Henceforth:
 $$A = (\mathcal{X}(M),\nabla)$$
-and 
+and:
 $$V = C^\infty(M).$$
 The scalar cochain complexes $C_{KV}(A,R)$ is $\mathbb{Z}$-graded as it follows,\\
 $C^q_{KV}(A,R) = 0$ for $q < 0$,\\
-$C^0_{KV}(A,R) = J(C^\infty(M))$,\\
-$C^q_{KV}(A,R) = Hom(A^{\otimes q},R)$ if $q > 0$.\\
-The vector space is graded as it follows,\\  
+$C^0_{KV}(A,R) = J(C^\infty(M))$:= the space of affine functions,\\
+$C^q_{KV}(A,R) = Hom(A^{\otimes q},C^\infty(R))$ if $q > 0$.\\
+
+Regarding the total KV cohomology the vector space $C_\tau(A,R)$ is graded as it follows,\\  
 $C^q_\tau(A,R) = 0$ if $q < 0,$\\
 $C^0_\tau(A,R)= C^\infty(M),$ if $q > 0$.\\
 $C^q_\tau(A,R) = Hom(A^{\otimes q},C^\infty(M))$ if $q > 0$.\\
@@ -105,10 +108,12 @@ $$(\Omega(M),d) \rightarrow (C_\tau(A,R),\delta_\tau).$$
 The quotient complex is denoted by
 $$(Q,d) = \frac{(C_\tau(A,R),\delta)}{(\Omega(M),d)},$$
 Links of de Rham cohomology with the total KV cohomology emerge from the following short exact sequence of cochain complexes,
-$$O \rightarrow (\Omega(M),d)\rightarrow (C_\tau(A,R),\delta\tau)\rightarrow (Q,d)\rightarrow 0.$$
+$$O \rightarrow (\Omega(M),d)\rightarrow (C_\tau(A,R),\delta\tau)\rightarrow (Q,d)\rightarrow 0.$$ 
+The short exact sequence above yields the following long cohomology exact sequence
+$$\rightarrow H^q_{dR}(M,R) \rightarrow H^q_\tau(A,R)\rightarrow H^q(Q)\rightarrow H^{q+1}_{dR}(M,R)\rightarrow$$
 
 \subsection{Tensor product of two KV complexes}
-In the framework of statistical geometry we will be interest face spectral sequences which arise from particular double complexes.
+In the category of statistical geometry we will be interested in   spectral sequences which arise from particular double complexes.
 We consider two Koszul-Vinberg algebras $A$ and $A^\star$. Let W be of left KV module of the both $A$ and $A^\star$. From this situation arise the following four cochain complexes:\\
 $(I): C_{KV}(A,W)$,\\
 $(II): C_{KV}(A^\star,W)$,\\
@@ -123,30 +128,24 @@ we put
 $$\delta(\alpha\otimes\beta) = [ \delta_\tau \alpha\otimes \beta + (-1)^q\alpha \otimes \delta_\tau \beta] \in C^{q+1,p} \oplus C^{q,p+1}$$
 It is obvious that 
 $$\delta \circ \delta = 0.$$
-The cohomology space ${H^q,p}$ is defined by 
+The cohomology space $H^{q,p}$ is defined as it follows,
 $$ H^{q,p}  = \frac{ker(\delta: C^{q,p}\rightarrow C^{q+1,p} \oplus C^{q,p+1})}{im(\delta)\cap C^{q,p}}.$$
-In Hessian manifolds statistical manifolds solutions of jauge equations gives rise to statistical 2-webs. These 2-webs are canonically associated tensor products of cochain complexes the cohomology of which can be calculated with spectral sequences.
-Situations as in (I), (II), (III), (IV) arise in any Hessian manifold $(M,g,\nabla)$.\\
-\section{Spectral sequences}
-We recall the definition of spectral sequences of cochain comlexes.
-\begin{defn} A cohomology spectral sequence is a sequence of cochain complexes $$(E_r,d_r)$$ 
-such that
-$$H(E_r,d_r) = E_{r+1}.$$
-\end{defn}
-In the present work our concern is a Quantitative approach to double spectral sequences in the information geometry. Our aim is to construct some relevant (sheaves of) double spectral sequence  $$( E^{p,q}_r,d^{r,-r+1}_r ).$$
-In other words,
-$$d^{r,-r+1}_r:\quad E^{p,q}_r \rightarrow E^{p + r,q - r + 1}_r.$$
-In the next sections our aim is to point out that from the methods of the information geometry emerge relevant double spectral sequences.
+In Hessian statistical manifolds solutions of gauge equations give rise to statistical 2-webs. These 2-webs are canonically associated with  tensor products of cochain complexes the cohomology of which can be calculated with spectral sequences.
+Situations as in (I), (II), (III), (IV) arise in any Hessian manifold $(M,g,\nabla)$.
 \section{Statistical structures}
-Henceforth the framework is the category whose objects $(M,g,\nabla,\nabla^\star)$ where \\
-(i) $(M,g)$ is a positive definite Riemannian manifold,\\
-(ii) $(\nabla,\nabla^\star)$ is a pair of torsion free Koszul connections on TM which are subject to the following identity\\
-(iii) $Xg(Y,Z) - g(\nabla_XY,Z) - g(Y,\nabla^\star_XZ)$\\
-We keep the notation in Section 2 and in Section 3.\\
-We concerned with the gauge equation of the couple $(\nabla,\nabla^\star)$. Let $\theta$ be a solution of that gauge equation, then we define another pair of solutions $(\Theta,\Theta^\star$ by the following identities:
+Henceforth the framework is the category $\gaugecatu$ restricted to objects $(M,g,\nabla)$ where:
+\begin{enumerate}[label=(\roman*)]
+    \item  $g$ is a Riemannian metric on $TM.$
+    \item  $(\nabla,\nabla^+)$ are both torsion free Koszul connections on $TM$.
+\end{enumerate}
+and morphisms Version March 20, 2024 submitted toof the form $(\text{Id}, \theta).$
+
+We keep the notation in Section 2 and in Section 3.
+
+We are concerned with the gauge equation of the couple $(\nabla,\nabla^\star)$. Let $\theta$ be a solution of that gauge equation, then we define another pair of solutions $(\Theta,\Theta^\star$ by the following identities:
 $$2g(\Theta(X),Y) = g(\theta(X), Y) + g(X, \theta(Y)),$$
 $$2g(\Theta^\star(X),Y) = g(\theta(X), Y) - g(X, \theta(Y)).$$
-T
+
 All of the following four distributions are regular and are 
 in involution,\\
 $\left\{Ker(\Theta),Im(\Theta), Ker(\Theta^\star), Im(\Theta^\star)\right\}.$ Furthermore one has the following 2-webs,
@@ -164,17 +163,21 @@ $$\nabla_XK^\star = K^\star,$$
 $$\nabla^\star_XI = I,$$
 $$\nabla^\star_XI^\star = I^\star.$$
 
-\textit{FACT.1: If either $(M, g,\nabla)$ or $(M, g, \nabla^\star)$ are Hessian structure then $K$, $K^\star$, $I$ and $I^\star$ are Hessian foliations. Thus any of the pairs $(K,I)$ and $(K^\star,I^\star)$ gives rise to double cochain complex.} \\
+\textit{FACT.1: If either $(M, g,\nabla)$ or $(M, g, \nabla^\star)$ are Hessian structure then $K$, $K^\star$, $I$ and $I^\star$ are Hessian foliations. Thus any of the pairs $(K,I)$ and $(K^\star,I^\star)$ gives rise to double cochain complex.} 
 
-\textit{FACT.2: It would be remembered that a foliated manifold carries in addition to its total de Rham complex two other remarkable complexes which are the complex of foliated forms and the complex of basic forms.}\\
+\textit{FACT.2: It would be remembered that a foliated manifold carries in addition to its total de Rham complex two other remarkable complexes which are the complex of foliated forms and the complex of basic forms.}
+
+\textit{FACT.3: Regrading the picture $\theta\rightarrow (\Theta, \Theta^\star)$ any of the three distributions $ker(\theta)$, $ker(\Theta)$ and $ker(\Theta^\star)$ has a constant rank, nevertheless these three rank may be pairwise different each from other.}
+
 \subsection{Tensor products}
 For every non negative integer q the dual vector spaces 
-$\Gamma(K^{\otimes q})$ and of $\Gamma(\Lambda^qK)$ are denoted by  $C^q(K)$ and by $\Omega^q_K(M)$ respectively. Let us put
-$$\Omega_K(M) = \oplus_q \Omega^q_K(M),$$
-$$C(K) = \oplus_qC^q(K).$$
+$\Gamma(K^{\otimes q})$ and of $\Gamma(\Lambda^qK)$ are denoted by  $C^q(K)$ and b $\Omega^q_K(M)$ respectively. Let us put
+$$C(K) = \oplus_qC^q (K),$$
+$$\Omega_K(M) = \oplus_q \Omega^q_K(M).$$
+
 It makes sense to restrict the de Rham operation to $\Omega_K(M)$ in order to define the following cochain complex,
-$$\rightarrow \Omega^{q-1}_K(M) \rightarrow \Omega^q_K(M) \rightarrow \Omega^{q+1}_K(M) \rightarrow $$
-In any Hessian manifold we involve \textit{FACT.1} we use the operators $\delta_{KV}$ and $\delta_\tau$ to write down the KV cochain complexes $[C(K),\delta_\tau]$ and $[C(K),\delta_\tau]$,
+$$\rightarrow \Omega^{q-1}_K(M) \rightarrow \Omega^q_K(M) \rightarrow \Omega^{q+1}_K(M) \rightarrow  $$
+In any Hessian manifold we involve \textit{FACT.1} and we use the operators $\delta_{KV}$ and $\delta_\tau$ to write down the KV cochain complexes $[C(K),\delta_\tau]$ and $[C(K),\delta_\tau]$,
 $$[C(K),\delta_{KV}]:\quad 0\rightarrow J(C^\infty(M)) \rightarrow ... \rightarrow C^{q-1}(K)\rightarrow C^q(K)\rightarrow C^{q+1}(K)\rightarrow $$
 $$[C(K),\delta_\tau]:\quad 0\rightarrow C^\infty(M)\rightarrow..\rightarrow C^{q-1}(K)\rightarrow C^q(K)\rightarrow C^{q+1}(K)\rightarrow $$
 
@@ -186,16 +189,16 @@ where
 $$A_K = \Gamma(K = ker(\Theta)).$$
 Similar complexes are attached to three other distributions $I$, $K^\star$ and $I^\star$.
 \subsection{Double complexes in a statistical manifold}
-In a statistical manifold $(M,g,\nabla,\nabla^\star)$ let $\theta$ be a solution of the jauge equation of $(\nabla^\star,\nabla$. It is associated with gives the following two 2-webs
+In a statistical manifold $(M,g,\nabla,\nabla^\star)$ let $\theta$ be a solution of the jauge equation of $(\nabla^\star,\nabla)$. The situation just described to the following two 2-webs
 $(K,I$ and $(K^\star,I^\star)$.\\
 We are concerned with the two de Rham double complexes:  
 $$\Omega(K,I) = \oplus_{q,p}\Omega_K(M)\otimes \Omega^p_I(M),$$
 $$\Omega(K^\star,I^\star) = \oplus_{q,p}\Omega^q_{K^\star}(M)\otimes\Omega^p_{I^\star}(M)$$
 \subsection{Double complexes in a Hessian manifold}
-In a Hessian manifold $(M,g,\nabla,\nabla^\star)$ we are concerned with de Rham double complexes which derive from 2-webs
+In a Hessian manifold $(M,g,\nabla,\nabla^\star)$ we are concerned with de Rham double complexes which derive from the following 2-webs
 $$\Omega(K,I)$$
 $$\Omega(K^\star,I^\star)$$
-To deal properies of the staistical $(g,\nabla,\nabla^\star)$ we involve the two Koszul-Vinberg algebras:
+To investigate properies of the statistical structure  $(g,\nabla,\nabla^\star)$ we involve the two Koszul-Vinberg algebras:
 $$A = \Gamma(TM), \nabla),$$
 $$A^\star = \Gamma(TM),\nabla^\star).$$
 Thus we face four complexes:
@@ -204,27 +207,54 @@ $$C_{KV}(A^\star,R),$$
 $$C_\tau(A,R),$$
 $$C_\tau(A^\star,R).$$
 We are interested two double KV complexes
-$$C_{KV}(A,A^\star) = \oplus_{q,p}C^q_{KV}(A,R)\otimes C_{KV}(A^\star,R)$$
-$$C_\tau(A,A^\star) = \oplus_{q,p}C^q_\tau(A,R)\otimes C^p_\tau(A^\star,R).$$
-Let G be the group of symmetries of $(M,g,\nabla,\nabla^\star)$; it is the finite dimensional Lie group 
+$$C_{KV}(A,A^\star) = \oplus_{q,p}C^q_{KV}(A,R)\otimes C^p_{KV}(A^\star,R)$$
+$$C_\tau(A,A^\star) = \oplus C^q_\tau(A,R)\otimes C^p_\tau(A^\star,R).$$
+These double complexes give rise to the total complexes $$(C_{KV}(M),d_{KV})$$
+and $$(C_\tau(M), d_\tau).$$
+Here
+$$C_\tau(M) = \oplus_n C^n_\tau(M)$$
+where $$C^n_\tau(M) = \oplus_{[q+p = n]}C^q\tau(A,R)\otimes C^p_\tau(A^\star,R).$$
+The following operator
+$$d_\tau:\quad C^n_\tau(M)\rightarrow C^{n+1}_\tau(M)$$
+is defined as it follows, given 
+$$u\otimes v \in C^q_\tau(A,R)\otimes C^p_\tau(A^\star,R)$$
+
+$$d_\tau(u\otimes v) = \delta_\tau(u)\otimes v + (-1)^q u\otimes \delta_\tau(v).$$
+Mutatis mutandis $(C_{KV},d_{KV})$ is defined similarly.\\
+Let G be the group of symmetries of $(M,g,\nabla,\nabla^\star)$; G is the following finite dimensional Lie group 
 $$G = Isom(M,g)\cap Aff(M,\nabla).$$
-The cohomology spaces of $C_{KV}(A,A^\star)$ and of $C_\tau(A,A^\star)$ are denoted by
-$$H_{KV}(\nabla,\nabla^\star) = \oplus_{q,p}H^{q,p}_{KV}(A,A^\star),$$
-$$H_\tau(\nabla,\nabla^\star) = \oplus_{q,p} H^{q,p}_\tau(A,A^\star)$$
-Of course the cohomology space above is a geometric invariant of G.
-\textit{}A forthcoming section will be devoted to calculate the cohomology of double complexes which are defined above. Before dealing with these calculations we go introduction other useful materials which will be involved. These materials derive from   persistent simplicial homologies which are related with both the Hessian equation of the gauge equation.\\
-\section{Gauge equation on statistical and persistent homology.}
-We fix a statistical
+
+Of course the cohomology spaces of the complexes which are introduced above are geometric invariant of G.\\
+
+\textit{}A forthcoming section will be devoted to calculate the cohomology of these complexes. Before dealing with these calculations we go introduction other useful materials which will be involved. These materials derive from persistent simplicial homologies which are related with the gauge equation as in the subsection just below.\\
+\subsection{Gauge equation and homology persistence.}
+We fix a statistical structure $(M,g,\nabla,\nabla^\star).$ Let $\theta$ be a solution of the gauge equation of $(\nabla^\star,\nabla)$. According to the notation used in the precedent sections $\theta$ gives rise to two 2-webs
+$$(K,I)$$ and $$(K^\star,I^\star).$$
+The foliation defined by $I^\star$ is denoted by $\mathcal{F}_\theta$.\\
+Let $r^\star(\theta)$ be the rank of the distribution $I^\star$. We put
+$$r^\star(M) = \max_\theta\left\{r^\star(\theta)\right\}.$$
+STEP.1:\\
+Now we choose a $\theta_1$ such that
+$$r^\star(\theta_1) = r^\star(M).$$
+Henceforth we fix $x \in M$.\\
+Let $F_1(x)$ be the leaf of $\mathcal{F}_{\theta_1}$ which contains $x$.\\
+So we introduce the $r^\star(M)$-dimensional statistical submanifold $$(F_1(x),g,\nabla^\star) \subset (M,g,\nabla^\star).$$ 
+STEP.2:\\
+We use the gauge equation of $F_x(g,\nabla^\star)$ to define $r^\star(F_1(x)$. Then we impliment the manipulation as in STEP.1 to introduce the statistical submanifold
+$$ (F_2(x),g,\nabla^\star) \subset (F_1(x),g,\nabla^\star).$$
+We set 
+$$(F_0,g,\nabla^\star) = (M,g,\nabla^\star).$$
+Then inductively we construct the following statistical filtration:
+
+\begin{equation} SP(M):(F_q(x),g,\nabla^\star)\subset (F_{q+1}(x),g,\nabla^\star)\subset .. \subset (M,g,\nabla^\star).
+\end{equation}
 
 
-
-
-
-\section{Calculations of cohomology of double complexes}
-
-
-
-
-
-
-
+We consider the real singular chain complex of $M$:
+\begin{equation}
+   Sing(M): \quad \rightarrow C_{q+1}(M)\rightarrow C_q(M)\rightarrow C_{q-1}(M) \rightarrow 
+\end{equation}
+The topology persistence $(SP(M)$ yields the following homology persistence:
+\begin{equation}
+  HP(M):\quad \rightarrow Sing(F_{q+1}(x))\rightarrow Sing(F_q(x))\rightarrow Sing(F_{q-1}(x))\rightarrow  
+\end{equation}

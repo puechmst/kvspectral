@@ -1,1 +1,100 @@
-\section{A spectral sequence}
+\section{Spectral sequences}
+\label{sec:spectral}
+In this section, we briefly recall the definition of spectral sequences of cochain complexes. A good recent reference on the subject is \citep{McCleary_2000}.
+\begin{defn}
+    \label{def:differential_sheaf}
+    A graded differential sheaf $\left(\mathcal{S}, d\right)$ is a graded sheaf $\left(\mathcal{S}^p\right)_{p \in \Z}$ together with a graded morphism $d \colon \mathcal{S}^p \to \mathcal{S}^{p+1}$ satisfying $d^2 = 0.$
+    \end{defn}
+\begin{defn}
+The derived cohomology sheaf is the graded sheaf $H\left(\right)$:
+\begin{equation}
+    \label{eq:derived_cohomology}
+    H^p(\mathcal{S}) = \frac{\ker\{d^p \colon \mathcal{S}^p \to \mathcal{S}^{p+1}\}}
+    {\im\{d^{p-1} \colon \mathcal{S}^{p-1} \to \mathcal{S}^p\} }
+\end{equation}
+\end{defn}
+\begin{rem}
+The derived cohomology sheaf is the sheafification of the local cohomology presheaf:
+\[
+U \mapsto H^p \left(\mathcal{S}(U)\right)
+\]
+\end{rem}
+In the sequel, a ring $R$ is fixed.
+\begin{defn}
+ A bigraded module $E$ over $R$ is a double indexed collection of $R$-modules $E^{p,q}, \, p,q \in \Z.$
+\end{defn}
+\begin{defn}
+Let $E$ be a bigraded module over $R$ and let $r \in \N$. A differential over $E$ of bidegree $(r,1-r)$ is double indexed collections of $R$-morphisms $d \colon E^{p,q} \to E^{p+r,q+1-r}$ such that $d^2 = 0.$
+\end{defn}
+\begin{defn}
+A differential bigraded $R$-module is a couple $(E,d)$ with $E$ a bigraded module and $d$ a differential of bidegree $(r,1-r)$, $r$ a fixed integer.
+\end{defn}
+\begin{defn} A cohomology spectral sequence is a sequence of bigraded differential modules $(E_r,d_r), r=1,2,\dots$ where $d_r$ has bidegree $(r,1-r)$ and for all $p,q,r$, $E^{p,q}_{r+1} \sim H^{p,q}(E_r,d_r).$
+\end{defn}
+\begin{rem}
+    A spectral sequence can be viewed as a successive approximation process and in most cases, $(E_2,d_2)$ is known and is the starting point of the sequence. Now, looking at stage $n$, that is $(E_n, d_n)$, the defining property of the spectral sequence indicates that if $Z_n = \ker d_n, B_n = \im d_{n-1}$, then, as a bigraded module, $E_{n+1} \sim Z_n / B_n.$ Now, if $\bar{Z}_{n+1} = \ker d_{n+1}, \bar{B}_{n+1}=\im d_n$, there exist modules $Z_{n+1},B_{n+1}$ such that $\bar{Z}_{n+1} = Z_{n+1}/B_{n}$, $\bar{B}_{n+1} = B_{n+1}/B_n$ and, by Noether's isomorphism, $Z_{n+1}/B_{n+1} = \bar{Z}_{n+1}/\bar{B}_{n+1}.$ Furthermore, since $d_{n+1}$ is a differential, $\bar{B_{n+1}} \supset B_n, \, \bar{z_{n+1}} \subset Z_n$, hence $B_n \subset B_{n+1} \subset Z_{n+1} \subset Z_n.$ Proceeding by recurrence, there exist limiting modules:
+    \[
+    B_\infty = \cup_n B_n, \, Z_\infty = \cap_n Z_n
+    \]
+    and the purpose of the spectral sequence is to obtain $Z_\infty / B_\infty.$
+\end{rem}
+\begin{defn}
+A spectral sequence is said to converge if there exists, for each couple of integers $(p,q)$ an integer $r(p,q)$ such that all differentials $d_r \colon E^{p,q}_r \to E_{p+r,q+1-r}$ are $0$ for $r \geq r(p,q).$
+\end{defn}
+\begin{prop}
+\label{prop:spectral_limit}
+If a spectral sequence converges, then, for any couple of integers $p,q$, the module 
+$E_\infty^{p,q}$ is isomorphic to the direct limit of the diagram:
+\begin{equation}
+\label{eq:spectral_limit}
+    \begin{tikzcd}
+        E_{r(p,q)}^{p,q} \ar[r] \ar[rd] & E_{r(p,q)+1}^{p,q} \ar[r] \ar[d]& \dots \ar[ld] \\
+        & E_\infty^{p,q} & 
+    \end{tikzcd}
+\end{equation}
+\end{prop}
+\begin{defn}
+    \label{def:exact_couple}
+An exact couple is a pair of modules $M,E$ and morphisms $i,j,k$ fitting in the exact diagram:
+\begin{equation}
+    \label{eq:exact_couple}
+    \begin{tikzcd}
+        M \ar[rr,"i"] & & M \ar[ld,"j"] \\
+        & E \ar[lu,"k"] &
+    \end{tikzcd}
+\end{equation}
+\end{defn}
+\begin{prop}
+\label{prop:differential_module_couple}
+Given an exact couple as in definition \ref{def:exact_couple}, $E$ is differential module with differential $d = j \circ k$
+\end{prop}
+The next proposition can be found in \citep{McCleary_2000}.
+\begin{prop}
+\label{prop:derived_couple}
+Let $(M,E,i,j,k)$ be an exact couple. The derived couple:
+$M_1 = \im (i), E_1 = H(E)$ is exact with morphisms: 
+\[
+i_1 = i\vert_{M_1}, \, j_1 = j \circ i + d E, \, k_1(e + dE) = k(e) 
+\]
+\end{prop}
+Passing to bigraded modules and iterating the process defines a spectral sequence $(E_r,d_r)$, where $E_r$ is the $r$-th derived module of $E$ and $d_r = j_r \circ k_r.$
+
+Finally, still using \citep{McCleary_2000}, a filtered complex $F^p \mathcal{C} \subset F^{p+1} \mathcal{C} \subset \dots $ defines an exact couple by passing to cohomology. Namely, starting with the short exact sequence:
+\begin{equation}
+    \label{eq:short_exact}
+    \begin{tikzcd}
+    0 \ar[r] & F^p \mathcal{C} \ar[r] & F^{p+1}\mathcal{C} \ar[r] & F^{p+1}\mathcal{C}/F^p\mathcal{C} \ar[r] & 0
+    \end{tikzcd}
+\end{equation}
+one obtain a long homology sequence:
+\begin{equation}
+    \label{eq:long_homology}
+    \begin{tikzcd}[column sep=small]
+    \dots \ar[r] & H^{p+q}\left(F^{p+1} \mathcal{C}\right) \ar[r,"i"] & H^{p+q}\left(F^{p}\mathcal{C}\right) \ar[r,"j"] & H^{p+q}\left(F^{p+1}\mathcal{C}/F^p\mathcal{C}\right) \ar[r,"k"] & H^{p+q+1} \left(F^{p+1} \mathcal{C}\right) 
+    \end{tikzcd}
+\end{equation}
+Putting:
+\[
+E^{p,q}=H^{p+q}\left(F^{p+1}\mathcal{C}/F^p\mathcal{C}\right), \, D^{p,q} = H^{p+q}\left(F^{p}\mathcal{C}\right)
+\]
+one obtain an exact couple, hence a spectral sequence. This construction will be part of the next section,  where our aim will be to point out that from the methods of the information geometry emerge relevant spectral sequences.
